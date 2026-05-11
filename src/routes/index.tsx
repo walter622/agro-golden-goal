@@ -424,22 +424,56 @@ function Landing() {
         <About />
         <Machines />
         {/* Conditions strip */}
-        <section className="bg-gold py-10">
-          <div className="max-w-6xl mx-auto px-4 md:px-8 grid sm:grid-cols-2 gap-6 text-campaign-green-dark">
-            <div className="flex items-center gap-4">
-              <div className="text-4xl">🌽</div>
-              <div>
-                <div className="font-display font-bold uppercase text-xl">Taxas reduzidas</div>
-                <div className="text-sm font-medium opacity-80">Financiamento exclusivo Saldão Gol de Placa</div>
+        <section className="relative bg-gold py-20 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 15% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%), radial-gradient(circle at 85% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%)" }} />
+          <div className="relative max-w-6xl mx-auto px-4 md:px-8">
+            <motion.div {...fadeUp} className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-campaign-green-dark text-campaign-gold px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.3em] shadow-lg">
+                <Trophy className="w-4 h-4" /> Condições Exclusivas
               </div>
+              <h2 className="mt-5 font-display font-bold uppercase text-3xl md:text-5xl text-campaign-green-dark leading-tight">
+                Saldão <span className="text-mf-red">Gol de Placa</span>
+              </h2>
+            </motion.div>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              <motion.div
+                {...fadeUp}
+                transition={{ duration: 0.6, delay: 0.05 }}
+                className="group relative bg-campaign-green-dark text-white rounded-2xl p-8 md:p-10 shadow-stadium hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
+              >
+                <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-campaign-gold/20" />
+                <div className="relative flex items-start gap-5">
+                  <div className="w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0">
+                    <Sprout className="w-9 h-9 text-campaign-green-dark" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Financiamento</div>
+                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Taxas Reduzidas</h3>
+                    <p className="mt-3 text-base md:text-lg text-white/85 leading-relaxed">Financiamento exclusivo do Saldão Gol de Placa, com as melhores taxas da região.</p>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                {...fadeUp}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="group relative bg-mf-red text-white rounded-2xl p-8 md:p-10 shadow-red hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
+              >
+                <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-campaign-gold/25" />
+                <div className="relative flex items-start gap-5">
+                  <div className="w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0">
+                    <Percent className="w-9 h-9 text-campaign-green-dark" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Desconto Imediato</div>
+                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Até 15% OFF</h3>
+                    <p className="mt-3 text-base md:text-lg text-white/90 leading-relaxed">Descontos reais em máquinas selecionadas para fechamento imediato.</p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="text-4xl">⚙️</div>
-              <div>
-                <div className="font-display font-bold uppercase text-xl">Até 15% OFF</div>
-                <div className="text-sm font-medium opacity-80">Descontos reais para fechamento imediato</div>
-              </div>
-            </div>
+            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12 text-center">
+              <CTAButton large>Quero essas condições</CTAButton>
+            </motion.div>
           </div>
         </section>
         <Units />
