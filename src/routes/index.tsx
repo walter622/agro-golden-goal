@@ -1,26 +1,453 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import {
+  Trophy, Percent, CreditCard, Wrench, CheckCircle2, MapPin,
+  Truck, Sprout, Leaf, Cog, Quote, Phone, Calendar, ArrowRight,
+} from "lucide-react";
+import logoCampanha from "@/assets/logo-gol-de-placa.png";
+import logoMassey from "@/assets/massey-a9-preto.png";
+import logoMasseyBranco from "@/assets/massey-a9-branco.png";
+import heroStadium from "@/assets/hero-stadium.jpg";
+import aboutImg from "@/assets/about-a9.jpg";
+import imgTractor from "@/assets/machine-tractor.jpg";
+import imgHarvester from "@/assets/machine-harvester.jpg";
+import imgPlanter from "@/assets/machine-planter.jpg";
+import imgSprayer from "@/assets/machine-sprayer.jpg";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "A9 Massey Ferguson — Gol de Placa | Até 15% OFF e 15x sem juros" },
+      { name: "description", content: "Saldão Agrishow na A9 Massey Ferguson: até 15% OFF e 15x sem juros. Tratores, colheitadeiras, plantadeiras e pulverizadores. 8 unidades no interior de SP." },
+      { property: "og:title", content: "A9 Massey Ferguson — Gol de Placa" },
+      { property: "og:description", content: "Até 15% OFF e 15x sem juros. A maior rede Massey Ferguson do interior de SP." },
+      { property: "og:image", content: heroStadium },
+      { property: "twitter:image", content: heroStadium },
+    ],
+  }),
+  component: Landing,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+const WHATSAPP = "5514999999999"; // TODO: trocar pelo número real
+const WA_MSG = encodeURIComponent("Olá! Tenho interesse na campanha Gol de Placa da A9 Massey Ferguson.");
+const WA_URL = `https://wa.me/${WHATSAPP}?text=${WA_MSG}`;
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.3 },
+  transition: { duration: 0.6, ease: "easeOut" as const },
+};
+
+function CTAButton({ children, large = false }: { children: React.ReactNode; large?: boolean }) {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+    <a
+      href={WA_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group inline-flex items-center justify-center gap-2 bg-red-cta text-white font-display font-bold uppercase tracking-wide rounded-md shadow-red hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_oklch(0.51_0.21_27/0.7)] transition-all ${
+        large ? "px-8 py-5 text-lg md:text-xl" : "px-6 py-3.5 text-base"
+      }`}
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+      {children}
+      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+    </a>
   );
 }
 
-function Index() {
-  return <PlaceholderIndex />;
+function Header() {
+  return (
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-black/70 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+        <a href="#top" className="flex items-center gap-3">
+          <img src={logoMasseyBranco} alt="Massey Ferguson A9" className="h-8 md:h-10 w-auto" />
+        </a>
+        <nav className="hidden md:flex items-center gap-7 text-sm font-semibold text-white/85 uppercase tracking-wide">
+          <a href="#oferta" className="hover:text-campaign-gold transition">Oferta</a>
+          <a href="#sobre" className="hover:text-campaign-gold transition">Sobre</a>
+          <a href="#maquinas" className="hover:text-campaign-gold transition">Máquinas</a>
+          <a href="#unidades" className="hover:text-campaign-gold transition">Unidades</a>
+          <a href="#depoimentos" className="hover:text-campaign-gold transition">Depoimentos</a>
+        </nav>
+        <a
+          href={WA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden sm:inline-flex items-center gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-4 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition"
+        >
+          <Phone className="w-4 h-4" /> Falar agora
+        </a>
+      </div>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section id="top" className="relative min-h-[92vh] overflow-hidden">
+      <img
+        src={heroStadium}
+        alt="Estádio iluminado com máquinas Massey Ferguson"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/55 to-black/95" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-20 pb-24 md:pt-28 md:pb-32 flex flex-col items-center text-center text-white">
+        <motion.img
+          {...fadeUp}
+          src={logoCampanha}
+          alt="Gol de Placa"
+          className="w-[280px] md:w-[460px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+        />
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-6 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-4 py-1.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
+          <Trophy className="w-4 h-4" /> Oferta Exclusiva Saldão Agrishow
+        </motion.div>
+        <motion.h1
+          {...fadeUp}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl"
+        >
+          Saldão Agrishow na A9 com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
+        </motion.h1>
+        <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.25 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/85">
+          Garanta sua Massey Ferguson com a maior rede de especialistas do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
+        </motion.p>
+        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.35 }} className="mt-10">
+          <CTAButton large>Fale com um Especialista A9</CTAButton>
+        </motion.div>
+        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.45 }} className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs md:text-sm text-white/70 uppercase tracking-widest">
+          <span>✓ 8 unidades no interior de SP</span>
+          <span>✓ Entrega técnica</span>
+          <span>✓ Suporte total A9</span>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function OfferBlock() {
+  const items = [
+    { icon: Percent, title: "Até 15% OFF", text: "Descontos reais em máquinas selecionadas para fechamento imediato." },
+    { icon: CreditCard, title: "15x Sem Juros", text: "Condições exclusivas de financiamento direto na concessionária." },
+    { icon: Wrench, title: "Entrega Técnica", text: "Treinamento completo para extrair 100% do potencial do equipamento." },
+  ];
+  return (
+    <section id="oferta" className="relative bg-stadium text-white py-20 md:py-28 overflow-hidden">
+      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.82 0.17 88 / 0.4), transparent 40%), radial-gradient(circle at 80% 80%, oklch(0.42 0.13 145 / 0.6), transparent 50%)" }} />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8 text-center">
+        <motion.div {...fadeUp} className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs md:text-sm">
+          <Trophy className="w-4 h-4" /> Oferta Gol de Placa
+        </motion.div>
+        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl max-w-3xl mx-auto">
+          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span>
+        </motion.h2>
+        <div className="mt-14 grid md:grid-cols-3 gap-6 md:gap-8">
+          {items.map((it, i) => (
+            <motion.div
+              key={it.title}
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 * i }}
+              className="relative bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-xl p-8 hover:border-campaign-gold hover:-translate-y-1 transition-all"
+            >
+              <div className="w-14 h-14 rounded-lg bg-gold flex items-center justify-center shadow-gold mb-5">
+                <it.icon className="w-7 h-7 text-campaign-green-dark" />
+              </div>
+              <h3 className="font-display font-bold text-2xl uppercase">{it.title}</h3>
+              <p className="mt-3 text-white/80 leading-relaxed">{it.text}</p>
+              <CheckCircle2 className="absolute top-5 right-5 w-6 h-6 text-campaign-gold" />
+            </motion.div>
+          ))}
+        </div>
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="mt-14">
+          <CTAButton large>Fale com um Especialista A9</CTAButton>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  const reasons = [
+    { icon: Truck, title: "Portfólio Completo", text: "Tratores, colheitadeiras, plantadeiras e pulverizadores com tecnologia global AGCO." },
+    { icon: Cog, title: "Agricultura de Precisão", text: "Máquinas equipadas com o que há de mais moderno em gestão de dados e economia de insumos." },
+    { icon: Wrench, title: "Entrega Técnica", text: "Você não recebe apenas uma máquina — recebe treinamento completo para extrair 100% dela." },
+  ];
+  return (
+    <section id="sobre" className="bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <motion.div {...fadeUp}>
+            <div className="inline-flex items-center gap-2 text-mf-red font-bold uppercase tracking-[0.3em] text-xs">
+              <Sprout className="w-4 h-4" /> Tradição e Inovação
+            </div>
+            <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl text-foreground leading-tight">
+              A9 Máquinas: <span className="text-mf-red">tradição</span> e inovação no campo
+            </h2>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              A A9 é a sua concessionária Massey Ferguson de confiança no interior de São Paulo. Mais do que vender máquinas, entregamos soluções que aumentam a eficiência do produtor rural — do pequeno ao grande.
+            </p>
+            <div className="mt-8">
+              <CTAButton>Fale com um Especialista A9</CTAButton>
+            </div>
+          </motion.div>
+          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
+            <div className="absolute -inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
+            <img src={aboutImg} alt="Produtor rural com técnico A9 Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[4/3] object-cover" />
+            <div className="absolute -bottom-6 -left-6 bg-mf-red text-white p-5 rounded-xl shadow-red max-w-[180px]">
+              <div className="font-display text-3xl font-bold">+30 anos</div>
+              <div className="text-xs uppercase tracking-wider mt-1 opacity-90">no agro paulista</div>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="mt-20 md:mt-28">
+          <motion.h3 {...fadeUp} className="text-center font-display font-bold uppercase text-2xl md:text-4xl">
+            Por que investir com a <span className="text-mf-red">A9</span>?
+          </motion.h3>
+          <div className="mt-12 grid md:grid-cols-3 gap-6">
+            {reasons.map((r, i) => (
+              <motion.div
+                key={r.title}
+                {...fadeUp}
+                transition={{ duration: 0.6, delay: 0.1 * i }}
+                className="group p-8 rounded-xl border-2 border-border hover:border-mf-red bg-white hover:shadow-red transition-all"
+              >
+                <div className="w-14 h-14 rounded-lg bg-mf-red/10 group-hover:bg-mf-red flex items-center justify-center transition-colors mb-5">
+                  <r.icon className="w-7 h-7 text-mf-red group-hover:text-white transition-colors" />
+                </div>
+                <h4 className="font-display font-bold text-xl uppercase">{r.title}</h4>
+                <p className="mt-3 text-muted-foreground leading-relaxed">{r.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Machines() {
+  const list = [
+    { img: imgTractor, name: "Tratores de Alta Potência", model: "Série 8S e 7700", text: "O máximo em força e baixo consumo para grandes operações." },
+    { img: imgHarvester, name: "Colheitadeiras", model: "Axiais e Híbridas", text: "Limpeza de grãos superior e mínima perda de safra." },
+    { img: imgPlanter, name: "Plantadeiras Momentum", model: "Linha Momentum", text: "Agilidade no plantio com a melhor distribuição do mercado." },
+    { img: imgSprayer, name: "Pulverizadores", model: "MF 500R", text: "Precisão milimétrica na aplicação de defensivos." },
+  ];
+  return (
+    <section id="maquinas" className="bg-neutral-950 text-white py-20 md:py-28 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(ellipse at top, oklch(0.82 0.17 88 / 0.25), transparent 60%)" }} />
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs">
+            <Cog className="w-4 h-4" /> Tecnologia AGCO
+          </div>
+          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+            Massey Ferguson para <span className="text-campaign-gold">cada desafio</span>
+          </h2>
+        </motion.div>
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {list.map((m, i) => (
+            <motion.article
+              key={m.name}
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.08 * i }}
+              className="group rounded-xl overflow-hidden bg-neutral-900 border border-white/10 hover:border-mf-red transition-all hover:-translate-y-1"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src={m.img} alt={m.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-3 left-4 text-xs font-bold uppercase tracking-widest text-campaign-gold">{m.model}</div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-display font-bold text-xl uppercase">{m.name}</h3>
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">{m.text}</p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Units() {
+  const cities = ["Avaré", "Piedade", "Bragança Paulista", "Itapeva", "Piracicaba", "Itapetininga", "Jaú", "Holambra (Paranapanema)"];
+  return (
+    <section id="unidades" className="bg-neutral-50 py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 text-mf-red font-bold uppercase tracking-[0.3em] text-xs">
+            <MapPin className="w-4 h-4" /> Onde o Agro Acontece
+          </div>
+          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+            Próximo de você, com <span className="text-mf-red">8 unidades</span>
+          </h2>
+          <p className="mt-5 text-muted-foreground text-lg">Suporte comercial e técnico antes, durante e depois da compra.</p>
+        </motion.div>
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {cities.map((c, i) => (
+            <motion.div
+              key={c}
+              {...fadeUp}
+              transition={{ duration: 0.5, delay: 0.05 * i }}
+              className="group flex items-center gap-3 bg-white p-5 rounded-xl border-2 border-border hover:border-mf-red hover:shadow-red transition-all"
+            >
+              <div className="w-10 h-10 rounded-full bg-mf-red flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <MapPin className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-mf-red">A9</div>
+                <div className="font-display font-bold text-base leading-tight">{c}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Testimonials() {
+  const items = [
+    { name: "Paulo Leme", role: "Produtor em Itapetininga", text: "Troquei minha frota com a A9 e a produtividade subiu 20% logo na primeira safra. Atendimento diferenciado." },
+    { name: "Marcela Gama", role: "Técnica Agrícola em Avaré", text: "As condições de financiamento da A9 e o suporte da equipe comercial são os melhores da região." },
+  ];
+  return (
+    <section id="depoimentos" className="relative py-20 md:py-28 bg-stadium text-white overflow-hidden">
+      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 30%, oklch(0.82 0.17 88 / 0.5), transparent 50%)" }} />
+      <div className="relative max-w-6xl mx-auto px-4 md:px-8">
+        <motion.div {...fadeUp} className="text-center">
+          <div className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs">
+            <Leaf className="w-4 h-4" /> Resultados Reais
+          </div>
+          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+            Quem planta com a A9, <span className="text-campaign-gold">colhe resultados</span>
+          </h2>
+        </motion.div>
+        <div className="mt-14 grid md:grid-cols-2 gap-8">
+          {items.map((t, i) => (
+            <motion.figure
+              key={t.name}
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 * i }}
+              className="bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-2xl p-8 md:p-10 relative"
+            >
+              <Quote className="w-10 h-10 text-campaign-gold opacity-70 mb-4" />
+              <blockquote className="text-lg md:text-xl leading-relaxed font-medium">"{t.text}"</blockquote>
+              <figcaption className="mt-6 pt-6 border-t border-white/10">
+                <div className="font-display font-bold text-lg uppercase text-campaign-gold">{t.name}</div>
+                <div className="text-sm text-white/70">{t.role}</div>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+        <motion.div {...fadeUp} className="mt-14 text-center">
+          <CTAButton large>Fale com um Especialista A9</CTAButton>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function FinalCTA() {
+  const bullets = [
+    "Financiamento facilitado",
+    "Tecnologia de agricultura de precisão",
+    "A maior rede Massey Ferguson do interior de SP",
+  ];
+  return (
+    <section className="relative py-20 md:py-28 bg-neutral-950 text-white overflow-hidden">
+      <img src={heroStadium} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
+      <div className="relative max-w-5xl mx-auto px-4 md:px-8 text-center">
+        <motion.img {...fadeUp} src={logoCampanha} alt="Gol de Placa" className="mx-auto w-[200px] md:w-[300px] mb-8" />
+        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="font-display font-bold uppercase text-3xl md:text-5xl lg:text-6xl leading-tight">
+          Potência, tecnologia e <span className="text-campaign-gold">gente que entende do agro</span>
+        </motion.h2>
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-10 flex flex-col items-center gap-3">
+          {bullets.map((b) => (
+            <div key={b} className="flex items-center gap-3 text-base md:text-lg">
+              <CheckCircle2 className="w-5 h-5 text-campaign-gold shrink-0" />
+              <span>{b}</span>
+            </div>
+          ))}
+        </motion.div>
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12">
+          <CTAButton large>Fale com um Especialista A9</CTAButton>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bg-black text-white/70 py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <img src={logoMasseyBranco} alt="Massey Ferguson A9" className="h-10 w-auto" />
+          <div className="flex items-center gap-2 text-sm">
+            <Calendar className="w-4 h-4 text-campaign-gold" /> Atendimento de Segunda a Sábado
+          </div>
+        </div>
+        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs uppercase tracking-widest">
+          <div>A9 Máquinas Agrícolas — Concessionária Massey Ferguson</div>
+          <div className="text-campaign-gold">🚀 Powered by Omnia Inteligência Digital</div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function WhatsAppFloat() {
+  return (
+    <a
+      href={WA_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar no WhatsApp"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 rounded-full bg-mf-red text-white flex items-center justify-center shadow-red animate-pulse-ring hover:scale-110 transition"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8">
+        <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+  );
+}
+
+function Landing() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <Hero />
+        <OfferBlock />
+        <About />
+        <Machines />
+        {/* Conditions strip */}
+        <section className="bg-gold py-10">
+          <div className="max-w-6xl mx-auto px-4 md:px-8 grid sm:grid-cols-2 gap-6 text-campaign-green-dark">
+            <div className="flex items-center gap-4">
+              <div className="text-4xl">🌽</div>
+              <div>
+                <div className="font-display font-bold uppercase text-xl">Taxas reduzidas</div>
+                <div className="text-sm font-medium opacity-80">Financiamento exclusivo Saldão Gol de Placa</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-4xl">⚙️</div>
+              <div>
+                <div className="font-display font-bold uppercase text-xl">Até 15% OFF</div>
+                <div className="text-sm font-medium opacity-80">Descontos reais para fechamento imediato</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Units />
+        <Testimonials />
+        <FinalCTA />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
+    </div>
+  );
 }
