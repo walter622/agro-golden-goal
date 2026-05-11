@@ -39,25 +39,29 @@ const fadeUp = {
   transition: { duration: 0.6, ease: "easeOut" as const },
 };
 
-function CTAButton({ children, large = false }: { children: React.ReactNode; large?: boolean }) {
+function CTAButton({ children, large = false, variant = "red" }: { children: React.ReactNode; large?: boolean; variant?: "red" | "gold" }) {
+  const base = variant === "gold"
+    ? "bg-gold text-campaign-green-dark shadow-gold hover:shadow-[0_20px_50px_-10px_oklch(0.82_0.17_88/0.7)]"
+    : "bg-red-cta text-white shadow-red hover:shadow-[0_20px_50px_-10px_oklch(0.51_0.21_27/0.8)]";
   return (
     <a
       href={WA_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center justify-center gap-2 bg-red-cta text-white font-display font-bold uppercase tracking-wide rounded-md shadow-red hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_oklch(0.51_0.21_27/0.7)] transition-all ${
-        large ? "px-8 py-5 text-lg md:text-xl" : "px-6 py-3.5 text-base"
+      className={`group relative inline-flex items-center justify-center gap-3 font-display font-bold uppercase tracking-wider rounded-md hover:scale-[1.04] active:scale-[0.99] transition-all overflow-hidden ${base} ${
+        large ? "px-10 py-6 text-lg md:text-2xl" : "px-7 py-4 text-base"
       }`}
     >
-      {children}
-      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+      <span className="relative">{children}</span>
+      <ArrowRight className="relative w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
     </a>
   );
 }
 
 function Header() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-black/70 border-b border-white/10">
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-black/75 border-b border-campaign-gold/20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
           <img src={logoMasseyBranco} alt="Massey Ferguson A9" className="h-8 md:h-10 w-auto" />
@@ -73,7 +77,7 @@ function Header() {
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-4 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition"
+          className="hidden sm:inline-flex items-center gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-4 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition shadow-red"
         >
           <Phone className="w-4 h-4" /> Falar agora
         </a>
@@ -84,40 +88,65 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative min-h-[92vh] overflow-hidden">
+    <section id="top" className="relative min-h-[100vh] overflow-hidden">
       <img
         src={heroStadium}
         alt="Estádio iluminado com máquinas Massey Ferguson"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/55 to-black/95" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-20 pb-24 md:pt-28 md:pb-32 flex flex-col items-center text-center text-white">
+      {/* Layered overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black" />
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 30%, oklch(0.82 0.17 88 / 0.18), transparent 55%)" }} />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+
+      {/* Spotlight glints */}
+      <div className="absolute top-0 left-1/4 w-px h-1/3 bg-gradient-to-b from-campaign-gold/60 to-transparent blur-sm" />
+      <div className="absolute top-0 right-1/4 w-px h-1/3 bg-gradient-to-b from-campaign-gold/60 to-transparent blur-sm" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-16 pb-28 md:pt-20 md:pb-36 flex flex-col items-center text-center text-white">
+        {/* Urgency badge */}
+        <motion.div
+          {...fadeUp}
+          className="inline-flex items-center gap-2 bg-mf-red/90 backdrop-blur border border-white/20 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] shadow-red animate-pulse-ring"
+        >
+          <span className="w-2 h-2 rounded-full bg-white animate-pulse" /> Campanha por tempo limitado
+        </motion.div>
+
         <motion.img
           {...fadeUp}
+          transition={{ duration: 0.7, delay: 0.1 }}
           src={logoCampanha}
           alt="Gol de Placa"
-          className="w-[200px] md:w-[320px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+          className="mt-6 w-[220px] md:w-[360px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)]"
         />
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-6 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-4 py-1.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
+
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-6 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
           <Trophy className="w-4 h-4" /> Oferta Exclusiva Saldão Agrishow
         </motion.div>
+
         <motion.h1
           {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-7 font-display font-bold uppercase text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] max-w-6xl"
         >
-          Saldão Agrishow na A9 com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
+          Saldão Agrishow na A9 com <br className="hidden md:block" />
+          <span className="inline-block bg-gold bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(255,200,0,0.3)]">Até 15% OFF</span>
+          <span className="text-white/80 mx-3 text-3xl md:text-5xl align-middle">+</span>
+          <span className="inline-block bg-gold bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(255,200,0,0.3)]">15x SEM JUROS</span>
         </motion.h1>
-        <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.25 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/85">
+
+        <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-7 max-w-2xl text-lg md:text-xl text-white/85 leading-relaxed">
           Garanta sua Massey Ferguson com a maior rede de especialistas do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
         </motion.p>
-        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.35 }} className="mt-10">
+
+        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.5 }} className="mt-12">
           <CTAButton large>Fale com um Especialista A9</CTAButton>
         </motion.div>
-        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.45 }} className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs md:text-sm text-white/70 uppercase tracking-widest">
-          <span>✓ 8 unidades no interior de SP</span>
-          <span>✓ Entrega técnica</span>
-          <span>✓ Suporte total A9</span>
+
+        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs md:text-sm text-white/70 uppercase tracking-widest">
+          <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> 8 unidades no interior de SP</span>
+          <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> Entrega técnica</span>
+          <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> Suporte total A9</span>
         </motion.div>
       </div>
     </section>
@@ -146,14 +175,21 @@ function OfferBlock() {
               key={it.title}
               {...fadeUp}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="relative bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-xl p-8 hover:border-campaign-gold hover:-translate-y-1 transition-all"
+              className="group relative bg-gradient-to-br from-black/60 to-campaign-green-dark/40 backdrop-blur-xl border border-campaign-gold/30 rounded-2xl p-8 md:p-10 text-left hover:border-campaign-gold hover:-translate-y-2 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] transition-all duration-300 overflow-hidden"
             >
-              <div className="w-14 h-14 rounded-lg bg-gold flex items-center justify-center shadow-gold mb-5">
-                <it.icon className="w-7 h-7 text-campaign-green-dark" />
+              {/* Corner glow */}
+              <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-campaign-gold/20 blur-3xl group-hover:bg-campaign-gold/40 transition-colors" />
+              {/* Number indicator */}
+              <div className="absolute top-5 right-6 font-display font-bold text-5xl text-campaign-gold/15 group-hover:text-campaign-gold/30 transition-colors">0{i + 1}</div>
+
+              <div className="relative w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                <it.icon className="w-8 h-8 text-campaign-green-dark" strokeWidth={2.5} />
               </div>
-              <h3 className="font-display font-bold text-2xl uppercase">{it.title}</h3>
-              <p className="mt-3 text-white/80 leading-relaxed">{it.text}</p>
-              <CheckCircle2 className="absolute top-5 right-5 w-6 h-6 text-campaign-gold" />
+              <h3 className="relative font-display font-bold text-2xl md:text-3xl uppercase leading-tight">{it.title}</h3>
+              <p className="relative mt-3 text-white/80 leading-relaxed">{it.text}</p>
+              <div className="relative mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-campaign-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                <CheckCircle2 className="w-4 h-4" /> Garantido na campanha
+              </div>
             </motion.div>
           ))}
         </div>
@@ -250,16 +286,21 @@ function Machines() {
               key={m.name}
               {...fadeUp}
               transition={{ duration: 0.6, delay: 0.08 * i }}
-              className="group rounded-xl overflow-hidden bg-neutral-900 border border-white/10 hover:border-mf-red transition-all hover:-translate-y-1"
+              className="group relative rounded-2xl overflow-hidden bg-gradient-to-b from-neutral-900 to-black border border-white/10 hover:border-campaign-gold transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(199,17,33,0.4)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={m.img} alt={m.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <img src={m.img} alt={m.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1200ms]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute top-3 right-3 bg-mf-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-red">Massey</div>
                 <div className="absolute bottom-3 left-4 text-xs font-bold uppercase tracking-widest text-campaign-gold">{m.model}</div>
               </div>
-              <div className="p-6">
-                <h3 className="font-display font-bold text-xl uppercase">{m.name}</h3>
+              <div className="p-6 relative">
+                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-campaign-gold/40 to-transparent" />
+                <h3 className="font-display font-bold text-xl uppercase leading-tight group-hover:text-campaign-gold transition-colors">{m.name}</h3>
                 <p className="mt-2 text-sm text-white/70 leading-relaxed">{m.text}</p>
+                <div className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-mf-red opacity-0 group-hover:opacity-100 transition-opacity">
+                  Saber mais <ArrowRight className="w-3.5 h-3.5" />
+                </div>
               </div>
             </motion.article>
           ))}
