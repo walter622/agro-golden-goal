@@ -96,7 +96,7 @@ function Hero() {
           {...fadeUp}
           src={logoCampanha}
           alt="Gol de Placa"
-          className="w-[280px] md:w-[460px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+          className="w-[200px] md:w-[320px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
         />
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-6 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-4 py-1.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
           <Trophy className="w-4 h-4" /> Oferta Exclusiva Saldão Agrishow
