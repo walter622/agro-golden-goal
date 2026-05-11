@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const WHATSAPP = "5514999999999"; // TODO: trocar pelo número real
+const WHATSAPP = "551155551346";
 const WA_MSG = encodeURIComponent("Olá! Tenho interesse na campanha Gol de Placa da A9 Massey Ferguson.");
 const WA_URL = `https://wa.me/${WHATSAPP}?text=${WA_MSG}`;
 
