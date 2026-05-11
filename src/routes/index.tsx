@@ -127,12 +127,9 @@ function Hero() {
         <motion.h1
           {...fadeUp}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-7 font-display font-bold uppercase text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] max-w-6xl"
+          className="mt-7 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl"
         >
-          Saldão Agrishow na A9 com <br className="hidden md:block" />
-          <span className="inline-block bg-gold bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(255,200,0,0.3)]">Até 15% OFF</span>
-          <span className="text-white/80 mx-3 text-3xl md:text-5xl align-middle">+</span>
-          <span className="inline-block bg-gold bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(255,200,0,0.3)]">15x SEM JUROS</span>
+          Saldão Agrishow na A9 com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
         </motion.h1>
 
         <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-7 max-w-2xl text-lg md:text-xl text-white/85 leading-relaxed">
