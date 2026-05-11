@@ -175,14 +175,21 @@ function OfferBlock() {
               key={it.title}
               {...fadeUp}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="relative bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-xl p-8 hover:border-campaign-gold hover:-translate-y-1 transition-all"
+              className="group relative bg-gradient-to-br from-black/60 to-campaign-green-dark/40 backdrop-blur-xl border border-campaign-gold/30 rounded-2xl p-8 md:p-10 text-left hover:border-campaign-gold hover:-translate-y-2 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] transition-all duration-300 overflow-hidden"
             >
-              <div className="w-14 h-14 rounded-lg bg-gold flex items-center justify-center shadow-gold mb-5">
-                <it.icon className="w-7 h-7 text-campaign-green-dark" />
+              {/* Corner glow */}
+              <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-campaign-gold/20 blur-3xl group-hover:bg-campaign-gold/40 transition-colors" />
+              {/* Number indicator */}
+              <div className="absolute top-5 right-6 font-display font-bold text-5xl text-campaign-gold/15 group-hover:text-campaign-gold/30 transition-colors">0{i + 1}</div>
+
+              <div className="relative w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                <it.icon className="w-8 h-8 text-campaign-green-dark" strokeWidth={2.5} />
               </div>
-              <h3 className="font-display font-bold text-2xl uppercase">{it.title}</h3>
-              <p className="mt-3 text-white/80 leading-relaxed">{it.text}</p>
-              <CheckCircle2 className="absolute top-5 right-5 w-6 h-6 text-campaign-gold" />
+              <h3 className="relative font-display font-bold text-2xl md:text-3xl uppercase leading-tight">{it.title}</h3>
+              <p className="relative mt-3 text-white/80 leading-relaxed">{it.text}</p>
+              <div className="relative mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-campaign-gold opacity-0 group-hover:opacity-100 transition-opacity">
+                <CheckCircle2 className="w-4 h-4" /> Garantido na campanha
+              </div>
             </motion.div>
           ))}
         </div>
