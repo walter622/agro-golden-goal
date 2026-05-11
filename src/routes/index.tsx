@@ -138,10 +138,20 @@ function Hero() {
           <CTAButton large>Fale com um Especialista A9</CTAButton>
         </motion.div>
 
-        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs md:text-sm text-white/75 uppercase tracking-widest">
-          <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> 8 unidades no interior de SP</span>
-          <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> Entrega técnica</span>
-          <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> Suporte total A9</span>
+        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-4">
+          {[
+            { label: "8 unidades no interior de SP" },
+            { label: "Entrega técnica" },
+            { label: "Suporte total A9" },
+          ].map((item) => (
+            <span
+              key={item.label}
+              className="flex items-center gap-2 rounded-full border border-campaign-gold/40 bg-black/55 backdrop-blur-md px-4 py-2 text-xs md:text-sm font-semibold tracking-wide text-white shadow-[0_4px_20px_-6px_rgba(0,0,0,0.6)]"
+            >
+              <CheckCircle2 className="w-4 h-4 text-campaign-gold" strokeWidth={2.5} />
+              {item.label}
+            </span>
+          ))}
         </motion.div>
       </div>
     </section>
