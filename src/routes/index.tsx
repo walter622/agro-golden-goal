@@ -88,26 +88,24 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative min-h-[100vh] overflow-hidden">
+    <section id="top" className="relative min-h-[90vh] md:min-h-[760px] flex items-center overflow-hidden">
       <img
         src={heroStadium}
         alt="Estádio iluminado com máquinas Massey Ferguson"
-        className="absolute inset-0 w-full h-full object-cover scale-105"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Layered overlays for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black" />
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 30%, oklch(0.82 0.17 88 / 0.18), transparent 55%)" }} />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+      {/* Stronger top + bottom gradient, lighter middle so the photo breathes around the content */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/65 to-black/95" />
+      {/* Center vignette to focus the eye */}
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 0%, oklch(0 0 0 / 0.55) 100%)" }} />
+      {/* Subtle gold glow behind the headline */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] rounded-full blur-3xl opacity-25" style={{ background: "radial-gradient(circle, oklch(0.82 0.17 88 / 0.5), transparent 60%)" }} />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
 
-      {/* Spotlight glints */}
-      <div className="absolute top-0 left-1/4 w-px h-1/3 bg-gradient-to-b from-campaign-gold/60 to-transparent blur-sm" />
-      <div className="absolute top-0 right-1/4 w-px h-1/3 bg-gradient-to-b from-campaign-gold/60 to-transparent blur-sm" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-16 pb-28 md:pt-20 md:pb-36 flex flex-col items-center text-center text-white">
-        {/* Urgency badge */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20 flex flex-col items-center text-center text-white">
         <motion.div
           {...fadeUp}
-          className="inline-flex items-center gap-2 bg-mf-red/90 backdrop-blur border border-white/20 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] shadow-red animate-pulse-ring"
+          className="inline-flex items-center gap-2 bg-mf-red/90 backdrop-blur border border-white/20 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] shadow-red"
         >
           <span className="w-2 h-2 rounded-full bg-white animate-pulse" /> Campanha por tempo limitado
         </motion.div>
@@ -117,30 +115,30 @@ function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           src={logoCampanha}
           alt="Gol de Placa"
-          className="mt-6 w-[220px] md:w-[360px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)]"
+          className="mt-5 w-[180px] md:w-[280px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)]"
         />
 
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-6 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-5 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
           <Trophy className="w-4 h-4" /> Oferta Exclusiva Saldão Agrishow
         </motion.div>
 
         <motion.h1
           {...fadeUp}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-7 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl"
+          className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
         >
           Saldão Agrishow na A9 com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
         </motion.h1>
 
-        <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-7 max-w-2xl text-lg md:text-xl text-white/85 leading-relaxed">
+        <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
           Garanta sua Massey Ferguson com a maior rede de especialistas do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
         </motion.p>
 
-        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.5 }} className="mt-12">
+        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.5 }} className="mt-8">
           <CTAButton large>Fale com um Especialista A9</CTAButton>
         </motion.div>
 
-        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs md:text-sm text-white/70 uppercase tracking-widest">
+        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs md:text-sm text-white/75 uppercase tracking-widest">
           <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> 8 unidades no interior de SP</span>
           <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> Entrega técnica</span>
           <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-campaign-gold" /> Suporte total A9</span>
