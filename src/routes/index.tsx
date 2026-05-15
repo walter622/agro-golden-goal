@@ -272,9 +272,6 @@ function Machines() {
       <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(ellipse at top, oklch(0.82 0.17 88 / 0.25), transparent 60%)" }} />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs">
-            <Cog className="w-4 h-4" /> Tecnologia AGCO
-          </div>
           <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
             Tecnologia Massey Ferguson para <span className="text-campaign-gold">cada desafio</span>
           </h2>
