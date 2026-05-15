@@ -398,7 +398,7 @@ function FinalCTA() {
   const bullets = [
     "Financiamento facilitado",
     "Tecnologia de agricultura de precisão",
-    "A maior rede Massey Ferguson do interior de SP",
+    "A sua rede Massey Ferguson do interior de SP",
   ];
   return (
     <section className="relative py-20 md:py-28 bg-neutral-950 text-white overflow-hidden">
