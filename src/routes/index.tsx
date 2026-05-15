@@ -17,8 +17,8 @@ import imgSprayer from "@/assets/machine-sprayer.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "A9 Massey Ferguson — Condições de Agrishow | Até 15% OFF e 15x sem juros" },
-      { name: "description", content: "Condições de Agrishow na A9 Massey Ferguson: até 15% OFF e 15x sem juros. Tratores, colheitadeiras, plantadeiras e pulverizadores. 8 unidades no interior de SP." },
+      { title: "A9 Massey Ferguson | Até 15% OFF e 15x sem juros" },
+      { name: "description", content: "A9 Massey Ferguson: até 15% OFF e 15x sem juros. Tratores, colheitadeiras, plantadeiras e pulverizadores. 8 unidades no interior de SP." },
       { property: "og:title", content: "A9 Massey Ferguson — Gol de Placa" },
       { property: "og:description", content: "Até 15% OFF e 15x sem juros. A maior rede Massey Ferguson do interior de SP." },
       { property: "og:image", content: heroStadium },
