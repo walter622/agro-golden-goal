@@ -316,7 +316,7 @@ function Machines() {
 }
 
 function Units() {
-  const cities = ["Avaré", "Piedade", "Bragança Paulista", "Itapeva", "Piracicaba", "Itapetininga", "Jaú", "Holambra (Paranapanema)"];
+  const cities = ["Avaré", "Piedade", "Bragança Paulista", "Itapeva", "Piracicaba", "Itapetininga", "Jaú", "Campos de Holambra (Paranapanema)"];
   return (
     <section id="unidades" className="bg-neutral-50 py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
