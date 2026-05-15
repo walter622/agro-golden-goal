@@ -17,8 +17,8 @@ import imgSprayer from "@/assets/machine-sprayer.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "A9 Massey Ferguson — Gol de Placa | Até 15% OFF e 15x sem juros" },
-      { name: "description", content: "Saldão Agrishow na A9 Massey Ferguson: até 15% OFF e 15x sem juros. Tratores, colheitadeiras, plantadeiras e pulverizadores. 8 unidades no interior de SP." },
+      { title: "A9 Massey Ferguson — Condições de Agrishow | Até 15% OFF e 15x sem juros" },
+      { name: "description", content: "Condições de Agrishow na A9 Massey Ferguson: até 15% OFF e 15x sem juros. Tratores, colheitadeiras, plantadeiras e pulverizadores. 8 unidades no interior de SP." },
       { property: "og:title", content: "A9 Massey Ferguson — Gol de Placa" },
       { property: "og:description", content: "Até 15% OFF e 15x sem juros. A maior rede Massey Ferguson do interior de SP." },
       { property: "og:image", content: heroStadium },
@@ -119,7 +119,7 @@ function Hero() {
         />
 
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-5 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
-          <Trophy className="w-4 h-4" /> Oferta Exclusiva Saldão Agrishow
+          <Trophy className="w-4 h-4" /> Condições de Agrishow
         </motion.div>
 
         <motion.h1
@@ -127,15 +127,15 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
         >
-          Saldão Agrishow na A9 com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
+          Condições de Agrishow na A9 Massey Ferguson com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
         </motion.h1>
 
         <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
-          Garanta sua Massey Ferguson com a maior rede de especialistas do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
+          Garanta sua Massey Ferguson com especialista do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
         </motion.p>
 
         <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.5 }} className="mt-8">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
 
         <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-4">
@@ -161,18 +161,18 @@ function Hero() {
 function OfferBlock() {
   const items = [
     { icon: Percent, title: "Até 15% OFF", text: "Descontos reais em máquinas selecionadas para fechamento imediato." },
-    { icon: CreditCard, title: "15x Sem Juros", text: "Condições exclusivas de financiamento direto na concessionária." },
-    { icon: Wrench, title: "Entrega Técnica", text: "Treinamento completo para extrair 100% do potencial do equipamento." },
+    { icon: CreditCard, title: "Até 15x Sem Juros", text: "Condições exclusivas de financiamento direto na concessionária." },
+    { icon: Wrench, title: "Entrega Técnica Especializada", text: "Suporte total A9 e treinamento completo para extrair 100% do equipamento." },
   ];
   return (
     <section id="oferta" className="relative bg-stadium text-white py-20 md:py-28 overflow-hidden">
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.82 0.17 88 / 0.4), transparent 40%), radial-gradient(circle at 80% 80%, oklch(0.42 0.13 145 / 0.6), transparent 50%)" }} />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 text-center">
         <motion.div {...fadeUp} className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs md:text-sm">
-          <Trophy className="w-4 h-4" /> Oferta Gol de Placa
+          <Trophy className="w-4 h-4" /> Oferta Exclusiva Gol de Placa
         </motion.div>
         <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl max-w-3xl mx-auto">
-          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span>
+          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span> com condições de Agrishow
         </motion.h2>
         <div className="mt-14 grid md:grid-cols-3 gap-6 md:gap-8">
           {items.map((it, i) => (
@@ -199,7 +199,7 @@ function OfferBlock() {
           ))}
         </div>
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="mt-14">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
@@ -227,7 +227,7 @@ function About() {
               A A9 é a sua concessionária Massey Ferguson de confiança no interior de São Paulo. Mais do que vender máquinas, entregamos soluções que aumentam a eficiência do produtor rural — do pequeno ao grande.
             </p>
             <div className="mt-8">
-              <CTAButton>Fale com um Especialista A9</CTAButton>
+              <CTAButton>Fale com um Especialista A9 Agora</CTAButton>
             </div>
           </motion.div>
           <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
@@ -316,7 +316,7 @@ function Machines() {
 }
 
 function Units() {
-  const cities = ["Avaré", "Piedade", "Bragança Paulista", "Itapeva", "Piracicaba", "Itapetininga", "Jaú", "Holambra (Paranapanema)"];
+  const cities = ["Avaré", "Piedade", "Bragança Paulista", "Itapeva", "Piracicaba", "Itapetininga", "Jaú", "Campos de Holambra (Paranapanema)"];
   return (
     <section id="unidades" className="bg-neutral-50 py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -387,7 +387,7 @@ function Testimonials() {
           ))}
         </div>
         <motion.div {...fadeUp} className="mt-14 text-center">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
@@ -398,7 +398,7 @@ function FinalCTA() {
   const bullets = [
     "Financiamento facilitado",
     "Tecnologia de agricultura de precisão",
-    "A maior rede Massey Ferguson do interior de SP",
+    "A sua rede Massey Ferguson do interior de SP",
   ];
   return (
     <section className="relative py-20 md:py-28 bg-neutral-950 text-white overflow-hidden">
@@ -418,7 +418,7 @@ function FinalCTA() {
           ))}
         </motion.div>
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
@@ -494,8 +494,8 @@ function Landing() {
                   </div>
                   <div>
                     <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Financiamento</div>
-                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Taxas Reduzidas</h3>
-                    <p className="mt-3 text-base md:text-lg text-white/85 leading-relaxed">Financiamento exclusivo do Saldão Gol de Placa, com as melhores taxas da região.</p>
+                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Taxas de Financiamento Reduzidas</h3>
+                    <p className="mt-3 text-base md:text-lg text-white/85 leading-relaxed">Condições exclusivas do Saldão Gol de Placa, com as melhores taxas da região.</p>
                   </div>
                 </div>
               </motion.div>
