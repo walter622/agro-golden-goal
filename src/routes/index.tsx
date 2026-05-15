@@ -199,7 +199,7 @@ function OfferBlock() {
           ))}
         </div>
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="mt-14">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
@@ -227,7 +227,7 @@ function About() {
               A A9 é a sua concessionária Massey Ferguson de confiança no interior de São Paulo. Mais do que vender máquinas, entregamos soluções que aumentam a eficiência do produtor rural — do pequeno ao grande.
             </p>
             <div className="mt-8">
-              <CTAButton>Fale com um Especialista A9</CTAButton>
+              <CTAButton>Fale com um Especialista A9 Agora</CTAButton>
             </div>
           </motion.div>
           <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
@@ -387,7 +387,7 @@ function Testimonials() {
           ))}
         </div>
         <motion.div {...fadeUp} className="mt-14 text-center">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
@@ -418,7 +418,7 @@ function FinalCTA() {
           ))}
         </motion.div>
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
