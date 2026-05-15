@@ -169,7 +169,7 @@ function OfferBlock() {
           <Trophy className="w-4 h-4" /> Oferta Exclusiva Gol de Placa
         </motion.div>
         <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl max-w-3xl mx-auto">
-          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span> com condições de Agrishow
+          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span>
         </motion.h2>
         <div className="mt-14 grid md:grid-cols-3 gap-6 md:gap-8">
           {items.map((it, i) => (
