@@ -119,7 +119,7 @@ function Hero() {
         />
 
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-5 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
-          <Trophy className="w-4 h-4" /> Oferta Exclusiva Saldão Agrishow
+          <Trophy className="w-4 h-4" /> Condições de Agrishow
         </motion.div>
 
         <motion.h1
@@ -127,15 +127,15 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
         >
-          Saldão Agrishow na A9 com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
+          Condições de Agrishow na A9 Massey Ferguson com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
         </motion.h1>
 
         <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
-          Garanta sua Massey Ferguson com a maior rede de especialistas do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
+          Garanta sua Massey Ferguson com especialista do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
         </motion.p>
 
         <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.5 }} className="mt-8">
-          <CTAButton large>Fale com um Especialista A9</CTAButton>
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
 
         <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-4">
