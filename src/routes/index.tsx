@@ -211,9 +211,6 @@ function About() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div {...fadeUp}>
-            <div className="inline-flex items-center gap-2 text-mf-red font-bold uppercase tracking-[0.3em] text-xs">
-              <Sprout className="w-4 h-4" /> Tradição e Inovação
-            </div>
             <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl text-foreground leading-tight">
               A9 Máquinas: <span className="text-mf-red">tradição</span> e inovação no campo
             </h2>
