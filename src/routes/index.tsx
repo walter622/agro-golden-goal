@@ -161,18 +161,18 @@ function Hero() {
 function OfferBlock() {
   const items = [
     { icon: Percent, title: "Até 15% OFF", text: "Descontos reais em máquinas selecionadas para fechamento imediato." },
-    { icon: CreditCard, title: "15x Sem Juros", text: "Condições exclusivas de financiamento direto na concessionária." },
-    { icon: Wrench, title: "Entrega Técnica", text: "Treinamento completo para extrair 100% do potencial do equipamento." },
+    { icon: CreditCard, title: "Até 15x Sem Juros", text: "Condições exclusivas de financiamento direto na concessionária." },
+    { icon: Wrench, title: "Entrega Técnica Especializada", text: "Suporte total A9 e treinamento completo para extrair 100% do equipamento." },
   ];
   return (
     <section id="oferta" className="relative bg-stadium text-white py-20 md:py-28 overflow-hidden">
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.82 0.17 88 / 0.4), transparent 40%), radial-gradient(circle at 80% 80%, oklch(0.42 0.13 145 / 0.6), transparent 50%)" }} />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 text-center">
         <motion.div {...fadeUp} className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs md:text-sm">
-          <Trophy className="w-4 h-4" /> Oferta Gol de Placa
+          <Trophy className="w-4 h-4" /> Oferta Exclusiva Gol de Placa
         </motion.div>
         <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl max-w-3xl mx-auto">
-          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span>
+          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span> com condições de Agrishow
         </motion.h2>
         <div className="mt-14 grid md:grid-cols-3 gap-6 md:gap-8">
           {items.map((it, i) => (
