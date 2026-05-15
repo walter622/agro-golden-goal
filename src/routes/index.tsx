@@ -124,7 +124,7 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
         >
-          A9 Massey Ferguson com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
+          Condições de Agrishow na A9 Massey Ferguson com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
         </motion.h1>
 
         <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
