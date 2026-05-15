@@ -494,8 +494,8 @@ function Landing() {
                   </div>
                   <div>
                     <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Financiamento</div>
-                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Taxas Reduzidas</h3>
-                    <p className="mt-3 text-base md:text-lg text-white/85 leading-relaxed">Financiamento exclusivo do Saldão Gol de Placa, com as melhores taxas da região.</p>
+                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Taxas de Financiamento Reduzidas</h3>
+                    <p className="mt-3 text-base md:text-lg text-white/85 leading-relaxed">Condições exclusivas do Saldão Gol de Placa, com as melhores taxas da região.</p>
                   </div>
                 </div>
               </motion.div>
