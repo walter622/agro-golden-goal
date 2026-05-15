@@ -118,9 +118,6 @@ function Hero() {
           className="mt-5 w-[180px] md:w-[280px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)]"
         />
 
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-5 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
-          <Trophy className="w-4 h-4" /> Condições de Agrishow
-        </motion.div>
 
         <motion.h1
           {...fadeUp}
