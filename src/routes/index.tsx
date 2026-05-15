@@ -428,7 +428,7 @@ function Footer() {
     <footer className="bg-black text-white/70 py-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <img src={logoMasseyBranco} alt="Massey Ferguson A9" className="h-10 w-auto" />
+          <img src={logoMasseyBranco} alt="Massey Ferguson A9" className="hidden md:block h-10 w-auto" />
           <div className="flex items-center gap-2 text-sm">
             <Calendar className="w-4 h-4 text-campaign-gold" /> Atendimento de Segunda a Sábado
           </div>
