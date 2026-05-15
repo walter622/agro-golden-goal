@@ -17,8 +17,8 @@ import imgSprayer from "@/assets/machine-sprayer.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "A9 Massey Ferguson — Condições de Agrishow | Até 15% OFF e 15x sem juros" },
-      { name: "description", content: "Condições de Agrishow na A9 Massey Ferguson: até 15% OFF e 15x sem juros. Tratores, colheitadeiras, plantadeiras e pulverizadores. 8 unidades no interior de SP." },
+      { title: "A9 Massey Ferguson | Até 15% OFF e 15x sem juros" },
+      { name: "description", content: "A9 Massey Ferguson: até 15% OFF e 15x sem juros. Tratores, colheitadeiras, plantadeiras e pulverizadores. 8 unidades no interior de SP." },
       { property: "og:title", content: "A9 Massey Ferguson — Gol de Placa" },
       { property: "og:description", content: "Até 15% OFF e 15x sem juros. A maior rede Massey Ferguson do interior de SP." },
       { property: "og:image", content: heroStadium },
@@ -118,16 +118,13 @@ function Hero() {
           className="mt-5 w-[180px] md:w-[280px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)]"
         />
 
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-5 inline-flex items-center gap-2 bg-gold text-campaign-green-dark px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-widest shadow-gold">
-          <Trophy className="w-4 h-4" /> Condições de Agrishow
-        </motion.div>
 
         <motion.h1
           {...fadeUp}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
         >
-          Condições de Agrishow na A9 Massey Ferguson com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
+          A9 Massey Ferguson com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
         </motion.h1>
 
         <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
@@ -172,7 +169,7 @@ function OfferBlock() {
           <Trophy className="w-4 h-4" /> Oferta Exclusiva Gol de Placa
         </motion.div>
         <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl max-w-3xl mx-auto">
-          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span> com condições de Agrishow
+          A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span>
         </motion.h2>
         <div className="mt-14 grid md:grid-cols-3 gap-6 md:gap-8">
           {items.map((it, i) => (
