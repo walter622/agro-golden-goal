@@ -313,33 +313,43 @@ function Machines() {
 }
 
 function Units() {
-  const cities = ["Avaré", "Piedade", "Bragança Paulista", "Itapeva", "Piracicaba", "Itapetininga", "Jaú", "Campos de Holambra (Paranapanema)"];
+  const stores = [
+    { city: "Avaré", address: ["Praça Cadiz, 01 — Jardim Europa II", "Avaré / SP"] },
+    { city: "Piedade", address: ["Rod. Bunjiro Nakao SP 250, 15 — Centro", "Piedade / SP"] },
+    { city: "Itapeva", address: ["Arthur Oswaldo Franson, 350", "Recanto Pilão D'Agua, Itapeva / SP"] },
+    { city: "Piracicaba", address: ["R. Antonio Morato do Amaral, 99", "Agua Branca, Piracicaba / SP"] },
+    { city: "Jaú", address: ["Av Deputado Zien Nassif, 1134", "Zona Industrial, Jaú / SP"] },
+    { city: "Bragança Paulista", address: ["Eduardo Rizk, n 1, Cidade Planejada I", "Bragança Paulista / SP"] },
+    { city: "Itapetininga", address: ["Rua Maria Plens, 600", "Jardim Bela Vista, Itapetininga / SP"] },
+    { city: "Campos de Holambra", address: ["Avenida das Posses, nº 330", "Campos de Holambra, Paranapanema / SP"] },
+  ];
   return (
-    <section id="unidades" className="bg-neutral-50 py-20 md:py-28">
+    <section id="unidades" className="bg-neutral-950 text-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-mf-red font-bold uppercase tracking-[0.3em] text-xs">
-            <MapPin className="w-4 h-4" /> Onde o Agro Acontece
+            <MapPin className="w-4 h-4" /> Nossas Lojas
           </div>
           <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
             Próximo de você, com <span className="text-mf-red">8 unidades</span>
           </h2>
-          <p className="mt-5 text-muted-foreground text-lg">Suporte comercial e técnico antes, durante e depois da compra.</p>
+          <p className="mt-5 text-white/70 text-lg">Suporte comercial e técnico antes, durante e depois da compra.</p>
         </motion.div>
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {cities.map((c, i) => (
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
+          {stores.map((s, i) => (
             <motion.div
-              key={c}
+              key={s.city}
               {...fadeUp}
-              transition={{ duration: 0.5, delay: 0.05 * i }}
-              className="group flex items-center gap-3 bg-white p-5 rounded-xl border-2 border-border hover:border-mf-red hover:shadow-red transition-all"
+              transition={{ duration: 0.5, delay: 0.04 * i }}
+              className="group"
             >
-              <div className="w-10 h-10 rounded-full bg-mf-red flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                <MapPin className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <div className="text-[10px] font-bold uppercase tracking-widest text-mf-red">A9</div>
-                <div className="font-display font-bold text-base leading-tight">{c}</div>
+              <h3 className="font-display font-bold text-xl md:text-2xl text-mf-red leading-tight">
+                A9 — {s.city}
+              </h3>
+              <div className="mt-2 text-sm md:text-base text-white/80 leading-relaxed">
+                {s.address.map((line) => (
+                  <div key={line}>{line}</div>
+                ))}
               </div>
             </motion.div>
           ))}
