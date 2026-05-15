@@ -268,10 +268,10 @@ function About() {
 
 function Machines() {
   const list = [
-    { img: imgTractor, name: "Tratores de Alta Potência", model: "Série 8S e 7700", text: "O máximo em força e baixo consumo para grandes operações." },
-    { img: imgHarvester, name: "Colheitadeiras", model: "Axiais e Híbridas", text: "Limpeza de grãos superior e mínima perda de safra." },
-    { img: imgPlanter, name: "Plantadeiras Momentum", model: "Linha Momentum", text: "Agilidade no plantio com a melhor distribuição do mercado." },
-    { img: imgSprayer, name: "Pulverizadores", model: "MF 500R", text: "Precisão milimétrica na aplicação de defensivos." },
+    { img: imgTractor, name: "Tratores", model: "Massey Ferguson", text: "O máximo em força e baixo consumo." },
+    { img: imgHarvester, name: "Colheitadeiras", model: "Axiais e Híbridas", text: "Limpeza de grãos superior e mínima perda." },
+    { img: imgPlanter, name: "Plantadeiras", model: "Massey Ferguson", text: "Agilidade no plantio com a melhor distribuição do mercado." },
+    { img: imgSprayer, name: "Pulverizadores", model: "Massey Ferguson", text: "Precisão milimétrica na aplicação." },
   ];
   return (
     <section id="maquinas" className="bg-neutral-950 text-white py-20 md:py-28 relative overflow-hidden">
@@ -282,7 +282,7 @@ function Machines() {
             <Cog className="w-4 h-4" /> Tecnologia AGCO
           </div>
           <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
-            Massey Ferguson para <span className="text-campaign-gold">cada desafio</span>
+            Tecnologia Massey Ferguson para <span className="text-campaign-gold">cada desafio</span>
           </h2>
         </motion.div>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
