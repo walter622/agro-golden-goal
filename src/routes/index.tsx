@@ -165,9 +165,6 @@ function OfferBlock() {
     <section id="oferta" className="relative bg-stadium text-white py-20 md:py-28 overflow-hidden">
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.82 0.17 88 / 0.4), transparent 40%), radial-gradient(circle at 80% 80%, oklch(0.42 0.13 145 / 0.6), transparent 50%)" }} />
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 text-center">
-        <motion.div {...fadeUp} className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs md:text-sm">
-          <Trophy className="w-4 h-4" /> Oferta Exclusiva Gol de Placa
-        </motion.div>
         <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl max-w-3xl mx-auto">
           A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span>
         </motion.h2>
