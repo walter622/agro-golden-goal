@@ -103,12 +103,6 @@ function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20 flex flex-col items-center text-center text-white">
-        <motion.div
-          {...fadeUp}
-          className="inline-flex items-center gap-2 bg-mf-red/90 backdrop-blur border border-white/20 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] shadow-red"
-        >
-          <span className="w-2 h-2 rounded-full bg-white animate-pulse" /> Campanha por tempo limitado
-        </motion.div>
 
         <motion.img
           {...fadeUp}
@@ -318,9 +312,6 @@ function Units() {
     <section id="unidades" className="bg-neutral-950 text-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 text-mf-red font-bold uppercase tracking-[0.3em] text-xs">
-            <MapPin className="w-4 h-4" /> Nossas Lojas
-          </div>
           <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
             Próximo de você, com <span className="text-mf-red">8 unidades</span>
           </h2>
@@ -360,9 +351,6 @@ function Testimonials() {
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 30%, oklch(0.82 0.17 88 / 0.5), transparent 50%)" }} />
       <div className="relative max-w-6xl mx-auto px-4 md:px-8">
         <motion.div {...fadeUp} className="text-center">
-          <div className="inline-flex items-center gap-2 text-campaign-gold font-bold uppercase tracking-[0.3em] text-xs">
-            <Leaf className="w-4 h-4" /> Resultados Reais
-          </div>
           <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
             Quem planta com a A9, <span className="text-campaign-gold">colhe resultados</span>
           </h2>
@@ -472,9 +460,6 @@ function Landing() {
           <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 15% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%), radial-gradient(circle at 85% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%)" }} />
           <div className="relative max-w-6xl mx-auto px-4 md:px-8">
             <motion.div {...fadeUp} className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-campaign-green-dark text-campaign-gold px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.3em] shadow-lg">
-                <Trophy className="w-4 h-4" /> Condições Exclusivas
-              </div>
               <h2 className="mt-5 font-display font-bold uppercase text-3xl md:text-5xl text-campaign-green-dark leading-tight">
                 Saldão <span className="text-mf-red">Gol de Placa</span>
               </h2>
