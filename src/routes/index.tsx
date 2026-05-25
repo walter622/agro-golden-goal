@@ -420,7 +420,7 @@ function Landing() {
           <div className="relative max-w-6xl mx-auto px-4 md:px-8">
             <motion.div {...fadeUp} className="text-center mb-12">
               <h2 className="mt-5 font-display font-bold uppercase text-3xl md:text-5xl text-campaign-green-dark leading-tight">
-                Saldão <span className="text-mf-red">Gol de Placa</span>
+                <span className="text-mf-red">GOL DE PLACA</span>
               </h2>
             </motion.div>
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
