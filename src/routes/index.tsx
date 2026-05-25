@@ -113,37 +113,38 @@ function Hero() {
         />
 
 
-        <motion.h1
+        <motion.div
           {...fadeUp}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 font-display font-bold uppercase text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-5xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
+          className="mt-8 max-w-4xl w-full"
         >
-          Condições de Agrishow na A9 Massey Ferguson com <span className="text-campaign-gold">Até 15% OFF</span> e <span className="text-campaign-gold">15x SEM JUROS</span>
-        </motion.h1>
+          <p className="font-display font-bold uppercase tracking-wide text-campaign-gold text-xl md:text-3xl lg:text-4xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+            Sucesso de vendas na Agrishow
+          </p>
+          <h1 className="mt-2 font-display font-black uppercase text-white text-4xl md:text-6xl lg:text-7xl leading-[1.02] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+            E a oferta continua
+          </h1>
 
-        <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="mt-6 max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
-          Garanta sua Massey Ferguson com especialista do interior de SP. Produtividade máxima, tecnologia de ponta e as condições que você só encontra na A9.
+          <div className="my-6 md:my-8 h-px w-full bg-gradient-to-r from-transparent via-campaign-green to-transparent" />
+
+          <h2 className="font-display font-black uppercase text-white text-3xl md:text-5xl lg:text-6xl leading-none drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+            <span className="text-white">15% </span>
+            <span className="text-campaign-gold">OFF</span>
+            <span className="text-white"> e 15X </span>
+            <span className="text-campaign-gold">SEM JUROS</span>
+          </h2>
+
+          <div className="my-6 md:my-8 h-px w-full bg-gradient-to-r from-transparent via-campaign-green to-transparent" />
+        </motion.div>
+
+        <motion.p {...fadeUp} transition={{ duration: 0.7, delay: 0.4 }} className="max-w-2xl text-base md:text-lg text-white/90 leading-relaxed">
+          Garanta seu Massey Ferguson com especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
         </motion.p>
 
         <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.5 }} className="mt-8">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
 
-        <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.6 }} className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-4">
-          {[
-            { label: "8 unidades no interior de SP" },
-            { label: "Entrega técnica" },
-            { label: "Suporte total A9" },
-          ].map((item) => (
-            <span
-              key={item.label}
-              className="flex items-center gap-2 rounded-full border border-campaign-gold/40 bg-black/55 backdrop-blur-md px-4 py-2 text-xs md:text-sm font-semibold tracking-wide text-white shadow-[0_4px_20px_-6px_rgba(0,0,0,0.6)]"
-            >
-              <CheckCircle2 className="w-4 h-4 text-campaign-gold" strokeWidth={2.5} />
-              {item.label}
-            </span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
