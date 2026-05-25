@@ -107,7 +107,7 @@ function Hero() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.28)_32%,rgba(0,0,0,0.52)_70%,rgba(0,0,0,0.74)_100%)]" />
         </div>
 
-        <div className="relative z-10 -mt-10 px-4 pb-6">
+        <div className="relative z-10 px-4 pb-6 pt-4">
           <div className="mx-auto w-full max-w-[320px] text-center">
             <img
               src={logoCampanha}
