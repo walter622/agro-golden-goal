@@ -78,9 +78,9 @@ function Header() {
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-4 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition shadow-red"
+          className="inline-flex items-center gap-1.5 sm:gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-3 py-2 sm:px-4 rounded-md text-xs sm:text-sm font-bold uppercase tracking-wide transition shadow-red"
         >
-          <Phone className="w-4 h-4" /> Falar agora
+          <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Falar agora
         </a>
       </div>
     </header>
@@ -99,12 +99,12 @@ function Hero() {
         transition={{ duration: 0.8 }}
         src={heroPsd}
         alt="Campanha Gol de Placa A9 Massey Ferguson — Sucesso de vendas na Agrishow e a oferta continua, 15% OFF e 15x sem juros."
-        className="w-full h-auto block select-none"
+        className="w-full h-auto block select-none max-h-[70vh] md:max-h-none object-contain object-top mx-auto"
         width={1920}
         height={1100}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-10 md:pb-14 mt-4 md:mt-6 flex justify-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-8 md:pb-14 mt-2 md:mt-6 flex justify-center">
         <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
       </div>
     </section>
