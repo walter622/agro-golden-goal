@@ -2,6 +2,63 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Helvetica Neue LT Std";
+  src: url("/fonts/HelveticaNeueLTStd-Roman.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue LT Std";
+  src: url("/fonts/HelveticaNeueLTStd-Bd.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue LT Std";
+  src: url("/fonts/HelveticaNeueLTStd-Blk.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue LT Std";
+  src: url("/fonts/HelveticaNeueLTStd-Hv.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue LT Std Cn";
+  src: url("/fonts/HelveticaNeueLTStd-Cn.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue LT Std Cn";
+  src: url("/fonts/HelveticaNeueLTStd-BdCn.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue LT Std Cn";
+  src: url("/fonts/HelveticaNeueLTStd-BlkCn.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue LT Std XBlk Cn";
+  src: url("/fonts/HelveticaNeueLTStd-XBlkCnO.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -33,8 +90,8 @@
   --color-campaign-gold: var(--campaign-gold);
   --color-campaign-gold-dark: var(--campaign-gold-dark);
 
-  --font-display: "Oswald", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Helvetica Neue LT Std Cn", "Helvetica Neue LT Std", system-ui, sans-serif;
+  --font-sans: "Helvetica Neue LT Std", system-ui, sans-serif;
 }
 
 :root {
