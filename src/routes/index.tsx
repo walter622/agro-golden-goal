@@ -49,13 +49,13 @@ function CTAButton({ children, large = false, variant = "red" }: { children: Rea
       href={WA_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group relative inline-flex items-center justify-center gap-3 font-display font-bold uppercase tracking-wider rounded-md hover:scale-[1.04] active:scale-[0.99] transition-all overflow-hidden ${base} ${
-        large ? "px-10 py-6 text-lg md:text-2xl" : "px-7 py-4 text-base"
+      className={`group relative inline-flex items-center justify-center gap-2 sm:gap-3 font-display font-bold uppercase tracking-wider rounded-md hover:scale-[1.04] active:scale-[0.99] transition-all overflow-hidden text-center ${base} ${
+        large ? "px-5 py-3.5 text-sm sm:px-8 sm:py-5 sm:text-lg md:px-10 md:py-6 md:text-2xl" : "px-5 py-3 text-sm sm:px-7 sm:py-4 sm:text-base"
       }`}
     >
       <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
       <span className="relative">{children}</span>
-      <ArrowRight className="relative w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
+      <ArrowRight className="relative w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform shrink-0" />
     </a>
   );
 }
@@ -99,7 +99,7 @@ function Hero() {
         transition={{ duration: 0.8 }}
         src={heroPsd}
         alt="Campanha Gol de Placa A9 Massey Ferguson — Sucesso de vendas na Agrishow e a oferta continua, 15% OFF e 15x sem juros."
-        className="w-full h-auto block select-none"
+        className="w-[150%] -ml-[25%] sm:w-[120%] sm:-ml-[10%] md:w-full md:ml-0 h-auto block select-none"
         width={1920}
         height={1100}
       />
