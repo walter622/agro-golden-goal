@@ -95,43 +95,47 @@ function Hero() {
         Sucesso de vendas na Agrishow e a oferta continua: 15% OFF e 15x sem juros na A9 Massey Ferguson.
       </h1>
 
-      <div className="md:hidden relative bg-black overflow-hidden min-h-[640px]">
-        <img
-          src={heroPsd}
-          alt="Campanha Gol de Placa A9 Massey Ferguson"
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-[68%_center] select-none"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.4)_40%,rgba(0,0,0,0.8)_100%)]" />
-
-        <div className="relative z-10 px-5 pt-8 pb-10 min-h-[640px] flex flex-col items-center justify-end text-center">
+      <div className="md:hidden relative bg-black">
+        <div className="relative overflow-hidden">
           <img
-            src={logoCampanha}
-            alt="Gol de Placa"
-            className="mx-auto w-full max-w-[260px] drop-shadow-[0_14px_30px_rgba(0,0,0,0.75)]"
-            width={1672}
-            height={1075}
+            src={heroStadiumMachines}
+            alt="Máquinas Massey Ferguson no estádio durante a campanha Gol de Placa"
+            className="h-[360px] w-full object-cover object-center"
+            width={1920}
+            height={1080}
           />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.28)_32%,rgba(0,0,0,0.52)_70%,rgba(0,0,0,0.74)_100%)]" />
+        </div>
 
-          <div className="mt-4 space-y-1 font-display font-bold uppercase text-white">
-            <p className="text-[13px] tracking-[0.18em] text-white/85">Sucesso de vendas na Agrishow</p>
-            <p className="text-[34px] leading-[0.95] text-white">E a oferta continua</p>
-          </div>
+        <div className="relative z-10 px-4 pb-6 pt-4">
+          <div className="mx-auto w-full max-w-[320px] text-center">
+            <img
+              src={logoCampanha}
+              alt="Gol de Placa"
+              className="mx-auto w-full max-w-[235px] drop-shadow-[0_14px_30px_rgba(0,0,0,0.7)]"
+              width={1672}
+              height={1075}
+            />
 
-          <p className="mt-4 font-display text-[26px] font-bold uppercase leading-none text-campaign-gold">
-            15% OFF e 15x sem juros
-          </p>
+            <div className="mt-3 space-y-1 font-display font-bold uppercase text-white">
+              <p className="text-[12px] tracking-[0.18em] text-white/80">Sucesso de vendas na Agrishow</p>
+              <p className="text-[30px] leading-[0.95] text-white">E a oferta continua</p>
+            </div>
 
-          <p className="mx-auto mt-4 max-w-[320px] text-balance text-[13px] leading-[1.45] text-white/85">
-            Garanta seu Massey Ferguson com o especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
-          </p>
+            <p className="mt-3 font-display text-[22px] font-bold uppercase leading-none text-campaign-gold">
+              15% OFF e 15x sem juros
+            </p>
 
-          <div className="mt-6 w-full flex justify-center">
-            <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+            <p className="mx-auto mt-3 max-w-[300px] text-balance text-[11px] leading-[1.4] text-white/78">
+              Garanta seu Massey Ferguson com o especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
+            </p>
+
+            <div className="mt-5">
+              <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+            </div>
           </div>
         </div>
       </div>
-
 
       <motion.img
         {...fadeUp}
