@@ -63,18 +63,11 @@ function CTAButton({ children, large = false, variant = "red" }: { children: Rea
 
 function Header() {
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-black/75 border-b border-campaign-gold/20">
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-[#1a1a1a]/95 border-b border-campaign-gold/20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
           <img src={logoMasseyBranco} alt="Massey Ferguson A9" className="h-8 md:h-10 w-auto" />
         </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm font-semibold text-white/85 uppercase tracking-wide">
-          <a href="#oferta" className="hover:text-campaign-gold transition">Oferta</a>
-          <a href="#sobre" className="hover:text-campaign-gold transition">Sobre</a>
-          <a href="#maquinas" className="hover:text-campaign-gold transition">Máquinas</a>
-          <a href="#unidades" className="hover:text-campaign-gold transition">Unidades</a>
-          <a href="#depoimentos" className="hover:text-campaign-gold transition">Depoimentos</a>
-        </nav>
         <a
           href={WA_URL}
           target="_blank"
@@ -95,48 +88,58 @@ function Hero() {
         Sucesso de vendas na Agrishow e a oferta continua: 15% OFF e 15x sem juros na A9 Massey Ferguson.
       </h1>
 
-      <div className="md:hidden relative bg-black">
-        <div className="relative overflow-hidden">
+      {/* MOBILE: background image with overlay content */}
+      <div className="md:hidden relative bg-black min-h-[calc(100vh-4rem)] flex flex-col">
+        <div
+          className="absolute inset-x-0 top-0 h-[58vh] bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroStadiumMachines})` }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-x-0 top-0 h-[62vh] bg-[linear-gradient(180deg,rgba(0,0,0,0.15)_0%,rgba(0,0,0,0.35)_45%,rgba(0,0,0,0.85)_85%,#000_100%)]"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 flex-1 flex flex-col items-center text-center px-5 pt-[28vh] pb-8">
           <img
-            src={heroStadiumMachines}
-            alt="Máquinas Massey Ferguson no estádio durante a campanha Gol de Placa"
-            className="h-[360px] w-full object-cover object-center"
-            width={1920}
-            height={1080}
+            src={logoCampanha}
+            alt="Gol de Placa - Aqui o artilheiro é você"
+            className="w-[62vw] max-w-[260px] drop-shadow-[0_14px_30px_rgba(0,0,0,0.75)]"
+            width={1672}
+            height={1075}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.28)_32%,rgba(0,0,0,0.52)_70%,rgba(0,0,0,0.74)_100%)]" />
-        </div>
 
-        <div className="relative z-10 px-4 pb-6 pt-4">
-          <div className="mx-auto w-full max-w-[320px] text-center">
-            <img
-              src={logoCampanha}
-              alt="Gol de Placa"
-              className="mx-auto w-full max-w-[235px] drop-shadow-[0_14px_30px_rgba(0,0,0,0.7)]"
-              width={1672}
-              height={1075}
-            />
+          <p className="mt-3 font-display font-bold uppercase text-campaign-gold tracking-[0.14em] text-[clamp(0.78rem,3.4vw,0.95rem)]">
+            Sucesso de vendas na Agrishow
+          </p>
+          <h2 className="mt-1 font-display font-black uppercase text-white leading-[0.95] text-[clamp(1.75rem,8vw,2.4rem)]">
+            E a oferta continua
+          </h2>
 
-            <div className="mt-3 space-y-1 font-display font-bold uppercase text-white">
-              <p className="text-[12px] tracking-[0.18em] text-white/80">Sucesso de vendas na Agrishow</p>
-              <p className="text-[30px] leading-[0.95] text-white">E a oferta continua</p>
-            </div>
+          <div
+            className="my-4 h-px w-3/4 max-w-[260px] bg-gradient-to-r from-transparent via-[#7dff5a] to-transparent shadow-[0_0_12px_#7dff5a]"
+            aria-hidden="true"
+          />
 
-            <p className="mt-3 font-display text-[22px] font-bold uppercase leading-none text-campaign-gold">
-              15% OFF e 15x sem juros
-            </p>
+          <p className="font-display font-black uppercase leading-tight text-[clamp(1.25rem,6vw,1.7rem)]">
+            <span className="text-white">15%</span>{" "}
+            <span className="text-campaign-gold">OFF</span>{" "}
+            <span className="text-white">e</span>{" "}
+            <span className="text-white">15X</span>{" "}
+            <span className="text-campaign-gold">SEM JUROS</span>
+          </p>
 
-            <p className="mx-auto mt-3 max-w-[300px] text-balance text-[11px] leading-[1.4] text-white/78">
-              Garanta seu Massey Ferguson com o especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
-            </p>
+          <p className="mt-3 max-w-[320px] text-balance text-white/85 leading-relaxed text-[clamp(0.82rem,3.6vw,0.95rem)]">
+            Garanta seu Massey Ferguson com o especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
+          </p>
 
-            <div className="mt-5">
-              <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
-            </div>
+          <div className="mt-6">
+            <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
           </div>
         </div>
       </div>
 
+      {/* DESKTOP */}
       <motion.img
         {...fadeUp}
         transition={{ duration: 0.8 }}
