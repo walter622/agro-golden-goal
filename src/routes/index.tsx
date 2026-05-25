@@ -96,16 +96,17 @@ function Hero() {
       </h1>
 
       <div className="md:hidden relative bg-black">
-        <div
-          className="flex min-h-[calc(100svh-4rem)] items-end justify-center px-4 pb-6 pt-8"
-          style={{
-            backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.38) 32%, rgba(0,0,0,0.72) 68%, rgba(0,0,0,0.98) 100%), url(${heroStadiumMachines})`,
-            backgroundPosition: "center top",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="w-full max-w-[320px] text-center">
+        <div className="relative flex min-h-[calc(100svh-4rem)] items-end justify-center overflow-hidden px-4 pb-6 pt-8">
+          <img
+            src={heroStadiumMachines}
+            alt="Máquinas Massey Ferguson no estádio durante a campanha Gol de Placa"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.34)_32%,rgba(0,0,0,0.7)_65%,rgba(0,0,0,0.95)_100%)]" />
+
+          <div className="relative z-10 w-full max-w-[320px] text-center">
             <img
               src={logoCampanha}
               alt="Gol de Placa"
