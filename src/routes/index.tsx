@@ -96,7 +96,7 @@ function Hero() {
       </h1>
 
       <div className="md:hidden relative isolate overflow-hidden bg-black">
-        <div className="relative h-[520px] overflow-hidden">
+        <div className="relative h-[520px] overflow-hidden bg-black">
           <img
             src={heroStadiumMachines}
             alt="Máquinas Massey Ferguson no estádio durante a campanha Gol de Placa"
@@ -106,14 +106,12 @@ function Hero() {
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.38)_32%,rgba(0,0,0,0.72)_68%,rgba(0,0,0,0.98)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(circle_at_center,oklch(0.82_0.17_88/0.28),transparent_72%)]" />
-        </div>
-
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.7 }}
-          className="relative z-10 mx-auto -mt-24 w-full max-w-[430px] px-4 pb-6"
-        >
-          <div className="mx-auto w-full max-w-[320px] text-center">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.7 }}
+            className="absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-[430px] px-4 pb-6"
+          >
+            <div className="mx-auto w-full max-w-[320px] text-center">
             <img
               src={logoCampanha}
               alt="Gol de Placa"
@@ -135,11 +133,12 @@ function Hero() {
               Garanta seu Massey Ferguson com o especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
             </p>
 
-            <div className="mt-5">
-              <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+              <div className="mt-5">
+                <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       <motion.img
