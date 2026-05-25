@@ -96,7 +96,7 @@ function Hero() {
       </h1>
 
       <div className="md:hidden relative isolate overflow-hidden bg-black">
-        <div className="absolute inset-0">
+        <div className="relative h-[520px] overflow-hidden">
           <img
             src={heroStadiumMachines}
             alt="Máquinas Massey Ferguson no estádio durante a campanha Gol de Placa"
@@ -111,7 +111,7 @@ function Hero() {
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.7 }}
-          className="relative z-10 mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-[430px] flex-col justify-end px-4 pb-6 pt-8"
+          className="relative z-10 mx-auto -mt-24 w-full max-w-[430px] px-4 pb-6"
         >
           <div className="mx-auto w-full max-w-[320px] text-center">
             <img
