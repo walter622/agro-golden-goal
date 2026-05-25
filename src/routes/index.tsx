@@ -180,11 +180,7 @@ function About() {
           </motion.div>
           <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
             <div className="absolute -inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
-            <img src={aboutImg} alt="Produtor rural com técnico A9 Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[4/3] object-cover" />
-            <div className="absolute -bottom-6 -left-6 bg-mf-red text-white p-5 rounded-xl shadow-red max-w-[180px]">
-              <div className="font-display text-3xl font-bold">+30 anos</div>
-              <div className="text-xs uppercase tracking-wider mt-1 opacity-90">no agro paulista</div>
-            </div>
+            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[4/3] object-cover" />
           </motion.div>
         </div>
 
