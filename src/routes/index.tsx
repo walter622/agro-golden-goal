@@ -8,6 +8,7 @@ import logoCampanha from "@/assets/logo-gol-de-placa.png";
 import logoMassey from "@/assets/massey-a9-preto.png";
 import logoMasseyBranco from "@/assets/massey-a9-branco.png";
 import heroStadium from "@/assets/hero-stadium.jpg";
+import heroPsd from "@/assets/hero-psd.jpg";
 import aboutImg from "@/assets/about-a9.jpg";
 import imgTractor from "@/assets/machine-tractor.jpg";
 import imgHarvester from "@/assets/machine-harvester.jpg";
@@ -88,68 +89,28 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative min-h-[90vh] md:min-h-[760px] flex items-center overflow-hidden">
-      <img
-        src={heroStadium}
-        alt="Estádio iluminado com máquinas Massey Ferguson"
-        className="absolute inset-0 w-full h-full object-cover"
+    <section id="top" className="relative bg-black overflow-hidden">
+      <h1 className="sr-only">
+        Sucesso de vendas na Agrishow e a oferta continua: 15% OFF e 15x sem juros na A9 Massey Ferguson.
+      </h1>
+
+      <motion.img
+        {...fadeUp}
+        transition={{ duration: 0.8 }}
+        src={heroPsd}
+        alt="Campanha Gol de Placa A9 Massey Ferguson — Sucesso de vendas na Agrishow e a oferta continua, 15% OFF e 15x sem juros."
+        className="w-full h-auto block select-none"
+        width={1920}
+        height={1703}
       />
-      {/* Stronger top + bottom gradient, lighter middle so the photo breathes around the content */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/65 to-black/95" />
-      {/* Center vignette to focus the eye */}
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 0%, oklch(0 0 0 / 0.55) 100%)" }} />
-      {/* Subtle gold glow behind the headline */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] rounded-full blur-3xl opacity-25" style={{ background: "radial-gradient(circle, oklch(0.82 0.17 88 / 0.5), transparent 60%)" }} />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20 flex flex-col items-center text-white">
-
-        <motion.img
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          src={logoCampanha}
-          alt="Gol de Placa"
-          className="mt-5 w-[180px] md:w-[280px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)]"
-        />
-
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-8 max-w-3xl w-full text-left"
-        >
-          <p className="font-display font-bold uppercase tracking-wide text-campaign-gold text-xl md:text-3xl lg:text-4xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            Seucesso de vendas na Agrishow
-          </p>
-          <h1 className="mt-1 font-display font-black uppercase text-white text-4xl md:text-6xl lg:text-7xl leading-[1.02] drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            E a oferta continua
-          </h1>
-
-          <div className="my-5 md:my-7 h-px w-full bg-gradient-to-r from-transparent via-campaign-green to-transparent" />
-
-          <h2 className="font-display font-black uppercase text-white text-3xl md:text-5xl lg:text-6xl leading-none drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            <span className="text-white">15% </span>
-            <span className="text-campaign-gold">OFF</span>
-            <span className="text-white"> e 15X </span>
-            <span className="text-campaign-gold">SEM JUROS</span>
-          </h2>
-
-          <div className="my-5 md:my-7 h-px w-full bg-gradient-to-r from-transparent via-campaign-green to-transparent" />
-
-          <p className="mt-4 max-w-xl text-base md:text-lg text-white/90 leading-relaxed">
-            Garanta seu Massey Ferguson com especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
-          </p>
-
-          <div className="mt-8">
-            <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
-          </div>
-        </motion.div>
-
-
-
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-20 -mt-8 md:-mt-16 flex justify-center md:justify-start">
+        <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
       </div>
     </section>
   );
 }
+
 
 function OfferBlock() {
   const items = [
