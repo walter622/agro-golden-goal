@@ -78,9 +78,9 @@ function Header() {
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-4 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition shadow-red"
+          className="inline-flex items-center gap-1.5 sm:gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-3 py-2 sm:px-4 rounded-md text-xs sm:text-sm font-bold uppercase tracking-wide transition shadow-red"
         >
-          <Phone className="w-4 h-4" /> Falar agora
+          <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Falar agora
         </a>
       </div>
     </header>
