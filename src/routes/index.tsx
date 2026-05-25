@@ -104,7 +104,7 @@ function Hero() {
         height={1100}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-10 md:pb-14 mt-4 md:mt-6 flex justify-center md:justify-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-10 md:pb-14 mt-4 md:mt-6 flex justify-center">
         <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
       </div>
     </section>
@@ -180,7 +180,7 @@ function About() {
           </motion.div>
           <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
             <div className="absolute -inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
-            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[4/3] object-cover" />
+            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-square object-contain bg-white" />
           </motion.div>
         </div>
 
