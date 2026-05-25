@@ -8,6 +8,7 @@ import logoCampanha from "@/assets/logo-gol-de-placa.png";
 import logoMassey from "@/assets/massey-a9-preto.png";
 import logoMasseyBranco from "@/assets/massey-a9-branco.png";
 import heroStadium from "@/assets/hero-stadium.jpg";
+import heroStadiumMachines from "@/assets/hero-stadium-machines.jpg";
 import heroPsd from "@/assets/hero-psd.jpg";
 import aboutImg from "@/assets/about-a9.jpg";
 import imgTractor from "@/assets/machine-tractor.jpg";
@@ -94,17 +95,64 @@ function Hero() {
         Sucesso de vendas na Agrishow e a oferta continua: 15% OFF e 15x sem juros na A9 Massey Ferguson.
       </h1>
 
+      <div className="md:hidden relative isolate overflow-hidden bg-black">
+        <div className="absolute inset-0">
+          <img
+            src={heroStadiumMachines}
+            alt="Máquinas Massey Ferguson no estádio durante a campanha Gol de Placa"
+            className="h-full w-full object-cover object-center"
+            width={1920}
+            height={1080}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.38)_32%,rgba(0,0,0,0.72)_68%,rgba(0,0,0,0.98)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(circle_at_center,oklch(0.82_0.17_88/0.28),transparent_72%)]" />
+        </div>
+
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.7 }}
+          className="relative z-10 mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-[430px] flex-col justify-end px-4 pb-6 pt-8"
+        >
+          <div className="mx-auto w-full max-w-[320px] text-center">
+            <img
+              src={logoCampanha}
+              alt="Gol de Placa"
+              className="mx-auto w-full max-w-[250px] drop-shadow-[0_14px_30px_rgba(0,0,0,0.7)]"
+              width={1672}
+              height={1075}
+            />
+
+            <div className="mt-3 space-y-1 font-display font-bold uppercase text-white">
+              <p className="text-[12px] tracking-[0.18em] text-white/80">Sucesso de vendas na Agrishow</p>
+              <p className="text-[30px] leading-[0.95] text-white">E a oferta continua</p>
+            </div>
+
+            <p className="mt-3 font-display text-[22px] font-bold uppercase leading-none text-campaign-gold">
+              15% OFF e 15x sem juros
+            </p>
+
+            <p className="mx-auto mt-3 max-w-[300px] text-balance text-[11px] leading-[1.4] text-white/78">
+              Garanta seu Massey Ferguson com o especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
+            </p>
+
+            <div className="mt-5">
+              <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
       <motion.img
         {...fadeUp}
         transition={{ duration: 0.8 }}
         src={heroPsd}
         alt="Campanha Gol de Placa A9 Massey Ferguson — Sucesso de vendas na Agrishow e a oferta continua, 15% OFF e 15x sem juros."
-        className="w-full h-auto block select-none"
+        className="hidden md:block w-full h-auto select-none"
         width={1920}
         height={1100}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-8 md:pt-6 md:pb-14 flex justify-center bg-black">
+      <div className="relative z-10 hidden md:flex max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-8 md:pt-6 md:pb-14 justify-center bg-black">
         <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
       </div>
     </section>
