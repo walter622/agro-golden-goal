@@ -104,7 +104,7 @@ function Hero() {
         height={1703}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-20 -mt-8 md:-mt-16 flex justify-center md:justify-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-16 -mt-24 md:-mt-40 lg:-mt-56 flex justify-center md:justify-start">
         <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
       </div>
     </section>
