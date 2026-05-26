@@ -180,7 +180,7 @@ function About() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative order-1 lg:order-2">
             <div className="absolute -inset-3 md:-inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
-            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[4/3] md:aspect-[3/4] object-cover" />
+            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[3/4] object-cover" />
           </motion.div>
           <motion.div {...fadeUp} className="order-2 lg:order-1 text-center lg:text-left">
             <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl text-foreground leading-[1.05]">
