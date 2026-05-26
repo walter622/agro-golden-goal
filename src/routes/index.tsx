@@ -359,32 +359,32 @@ function Testimonials() {
     { name: "Marcela Gama", role: "Técnica Agrícola em Avaré", text: "As condições de financiamento da A9 e o suporte da equipe comercial são os melhores da região." },
   ];
   return (
-    <section id="depoimentos" className="relative py-20 md:py-28 bg-stadium text-white overflow-hidden">
+    <section id="depoimentos" className="relative py-14 sm:py-20 md:py-28 bg-stadium text-white overflow-hidden">
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 30%, oklch(0.82 0.17 88 / 0.5), transparent 50%)" }} />
-      <div className="relative max-w-6xl mx-auto px-4 md:px-8">
+      <div className="relative max-w-6xl mx-auto px-5 md:px-8">
         <motion.div {...fadeUp} className="text-center">
-          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+          <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl leading-[1.05]">
             Quem planta com a A9, <span className="text-campaign-gold">colhe resultados</span>
           </h2>
         </motion.div>
-        <div className="mt-14 grid md:grid-cols-2 gap-8">
+        <div className="mt-10 md:mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
           {items.map((t, i) => (
             <motion.figure
               key={t.name}
               {...fadeUp}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-2xl p-8 md:p-10 relative"
+              className="bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-2xl p-6 sm:p-8 md:p-10 relative"
             >
-              <Quote className="w-10 h-10 text-campaign-gold opacity-70 mb-4" />
-              <blockquote className="text-lg md:text-xl leading-relaxed font-medium">"{t.text}"</blockquote>
-              <figcaption className="mt-6 pt-6 border-t border-white/10">
-                <div className="font-display font-bold text-lg uppercase text-campaign-gold">{t.name}</div>
-                <div className="text-sm text-white/70">{t.role}</div>
+              <Quote className="w-8 h-8 md:w-10 md:h-10 text-campaign-gold opacity-70 mb-3 md:mb-4" />
+              <blockquote className="text-base sm:text-lg md:text-xl leading-relaxed font-medium">"{t.text}"</blockquote>
+              <figcaption className="mt-5 md:mt-6 pt-5 md:pt-6 border-t border-white/10">
+                <div className="font-display font-bold text-base md:text-lg uppercase text-campaign-gold">{t.name}</div>
+                <div className="text-xs md:text-sm text-white/70">{t.role}</div>
               </figcaption>
             </motion.figure>
           ))}
         </div>
-        <motion.div {...fadeUp} className="mt-14 text-center">
+        <motion.div {...fadeUp} className="mt-10 md:mt-14 text-center">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
@@ -393,6 +393,7 @@ function Testimonials() {
 }
 
 function FinalCTA() {
+
   const bullets = [
     "Financiamento facilitado",
     "Tecnologia de agricultura de precisão",
