@@ -162,39 +162,40 @@ function OfferBlock() {
     { icon: Wrench, title: "Entrega Técnica Especializada", text: "Suporte total A9 e treinamento completo para extrair 100% do equipamento." },
   ];
   return (
-    <section id="oferta" className="relative bg-stadium text-white py-20 md:py-28 overflow-hidden">
+    <section id="oferta" className="relative bg-stadium text-white py-14 sm:py-20 md:py-28 overflow-hidden">
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.82 0.17 88 / 0.4), transparent 40%), radial-gradient(circle at 80% 80%, oklch(0.42 0.13 145 / 0.6), transparent 50%)" }} />
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8 text-center">
-        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl max-w-3xl mx-auto">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8 text-center">
+        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl max-w-3xl mx-auto leading-[1.05]">
           A oportunidade do ano para <span className="text-campaign-gold">renovar sua frota</span>
         </motion.h2>
-        <div className="mt-14 grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="mt-10 md:mt-14 grid gap-5 md:grid-cols-3 md:gap-8">
           {items.map((it, i) => (
             <motion.div
               key={it.title}
               {...fadeUp}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="group relative bg-gradient-to-br from-black/60 to-campaign-green-dark/40 backdrop-blur-xl border border-campaign-gold/30 rounded-2xl p-8 md:p-10 text-left hover:border-campaign-gold hover:-translate-y-2 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] transition-all duration-300 overflow-hidden"
+              className="group relative bg-gradient-to-br from-black/60 to-campaign-green-dark/40 backdrop-blur-xl border border-campaign-gold/30 rounded-2xl p-6 sm:p-8 md:p-10 text-left hover:border-campaign-gold hover:-translate-y-2 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] transition-all duration-300 overflow-hidden"
             >
               {/* Corner glow */}
               <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-campaign-gold/20 blur-3xl group-hover:bg-campaign-gold/40 transition-colors" />
               {/* Number indicator */}
-              <div className="absolute top-5 right-6 font-display font-bold text-5xl text-campaign-gold/15 group-hover:text-campaign-gold/30 transition-colors">0{i + 1}</div>
+              <div className="absolute top-4 right-5 font-display font-bold text-4xl md:text-5xl text-campaign-gold/15 group-hover:text-campaign-gold/30 transition-colors">0{i + 1}</div>
 
-              <div className="relative w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
-                <it.icon className="w-8 h-8 text-campaign-green-dark" strokeWidth={2.5} />
+              <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold mb-5 md:mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                <it.icon className="w-7 h-7 md:w-8 md:h-8 text-campaign-green-dark" strokeWidth={2.5} />
               </div>
-              <h3 className="relative font-display font-bold text-2xl md:text-3xl uppercase leading-tight">{it.title}</h3>
-              <p className="relative mt-3 text-white/80 leading-relaxed">{it.text}</p>
-              <div className="relative mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-campaign-gold opacity-0 group-hover:opacity-100 transition-opacity">
+              <h3 className="relative font-display font-bold text-xl sm:text-2xl md:text-3xl uppercase leading-tight">{it.title}</h3>
+              <p className="relative mt-3 text-sm md:text-base text-white/80 leading-relaxed">{it.text}</p>
+              <div className="relative mt-5 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-campaign-gold opacity-0 group-hover:opacity-100 transition-opacity">
                 <CheckCircle2 className="w-4 h-4" /> Garantido na campanha
               </div>
             </motion.div>
           ))}
         </div>
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="mt-14">
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="mt-10 md:mt-14">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
+
       </div>
     </section>
   );
@@ -207,43 +208,43 @@ function About() {
     { icon: Wrench, title: "Entrega Técnica", text: "Você não recebe apenas uma máquina — recebe treinamento completo para extrair 100% dela." },
   ];
   return (
-    <section id="sobre" className="bg-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div {...fadeUp}>
-            <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl text-foreground leading-tight">
+    <section id="sobre" className="bg-white py-14 sm:py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative order-1 lg:order-2">
+            <div className="absolute -inset-3 md:-inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
+            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[4/3] md:aspect-[3/4] object-cover" />
+          </motion.div>
+          <motion.div {...fadeUp} className="order-2 lg:order-1 text-center lg:text-left">
+            <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl text-foreground leading-[1.05]">
               A9 Máquinas: <span className="text-mf-red">tradição</span> e inovação no campo
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-5 md:mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
               A A9 é a sua concessionária Massey Ferguson de confiança no interior de São Paulo. Mais do que vender máquinas, entregamos soluções que aumentam a eficiência do produtor rural — do pequeno ao grande.
             </p>
-            <div className="mt-8">
+            <div className="mt-7 md:mt-8 flex justify-center lg:justify-start">
               <CTAButton>Fale com um Especialista A9 Agora</CTAButton>
             </div>
           </motion.div>
-          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
-            <div className="absolute -inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
-            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[3/4] object-cover" />
-          </motion.div>
         </div>
 
-        <div className="mt-20 md:mt-28">
-          <motion.h3 {...fadeUp} className="text-center font-display font-bold uppercase text-2xl md:text-4xl">
+        <div className="mt-16 md:mt-28">
+          <motion.h3 {...fadeUp} className="text-center font-display font-bold uppercase text-[clamp(1.4rem,6vw,2.4rem)] md:text-4xl leading-tight">
             Por que investir com a <span className="text-mf-red">A9</span>?
           </motion.h3>
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
+          <div className="mt-10 md:mt-12 grid gap-5 md:grid-cols-3 md:gap-6">
             {reasons.map((r, i) => (
               <motion.div
                 key={r.title}
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                className="group p-8 rounded-xl border-2 border-border hover:border-mf-red bg-white hover:shadow-red transition-all"
+                className="group p-6 md:p-8 rounded-xl border-2 border-border hover:border-mf-red bg-white hover:shadow-red transition-all"
               >
-                <div className="w-14 h-14 rounded-lg bg-mf-red/10 group-hover:bg-mf-red flex items-center justify-center transition-colors mb-5">
-                  <r.icon className="w-7 h-7 text-mf-red group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-mf-red/10 group-hover:bg-mf-red flex items-center justify-center transition-colors mb-4 md:mb-5">
+                  <r.icon className="w-6 h-6 md:w-7 md:h-7 text-mf-red group-hover:text-white transition-colors" />
                 </div>
-                <h4 className="font-display font-bold text-xl uppercase">{r.title}</h4>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{r.text}</p>
+                <h4 className="font-display font-bold text-lg md:text-xl uppercase">{r.title}</h4>
+                <p className="mt-2 md:mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{r.text}</p>
               </motion.div>
             ))}
           </div>
@@ -253,6 +254,7 @@ function About() {
   );
 }
 
+
 function Machines() {
   const list = [
     { img: imgTractor, name: "Tratores", model: "Massey Ferguson", text: "O máximo em força e baixo consumo." },
@@ -261,15 +263,15 @@ function Machines() {
     { img: imgSprayer, name: "Pulverizadores", model: "Massey Ferguson", text: "Precisão milimétrica na aplicação." },
   ];
   return (
-    <section id="maquinas" className="bg-neutral-950 text-white py-20 md:py-28 relative overflow-hidden">
+    <section id="maquinas" className="bg-neutral-950 text-white py-14 sm:py-20 md:py-28 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(ellipse at top, oklch(0.82 0.17 88 / 0.25), transparent 60%)" }} />
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8">
         <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
-          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+          <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl leading-[1.05]">
             Tecnologia Massey Ferguson para <span className="text-campaign-gold">cada desafio</span>
           </h2>
         </motion.div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 md:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
           {list.map((m, i) => (
             <motion.article
               key={m.name}
@@ -277,15 +279,15 @@ function Machines() {
               transition={{ duration: 0.6, delay: 0.08 * i }}
               className="group relative rounded-2xl overflow-hidden bg-gradient-to-b from-neutral-900 to-black border border-white/10 hover:border-campaign-gold transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(199,17,33,0.4)]"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden">
                 <img src={m.img} alt={m.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1200ms]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute top-3 right-3 bg-mf-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-red">Massey</div>
                 <div className="absolute bottom-3 left-4 text-xs font-bold uppercase tracking-widest text-campaign-gold">{m.model}</div>
               </div>
-              <div className="p-6 relative">
+              <div className="p-5 md:p-6 relative">
                 <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-campaign-gold/40 to-transparent" />
-                <h3 className="font-display font-bold text-xl uppercase leading-tight group-hover:text-campaign-gold transition-colors">{m.name}</h3>
+                <h3 className="font-display font-bold text-lg md:text-xl uppercase leading-tight group-hover:text-campaign-gold transition-colors">{m.name}</h3>
                 <p className="mt-2 text-sm text-white/70 leading-relaxed">{m.text}</p>
                 <div className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-mf-red opacity-0 group-hover:opacity-100 transition-opacity">
                   Saber mais <ArrowRight className="w-3.5 h-3.5" />
@@ -294,10 +296,14 @@ function Machines() {
             </motion.article>
           ))}
         </div>
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-10 md:mt-14 text-center">
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+        </motion.div>
       </div>
     </section>
   );
 }
+
 
 function Units() {
   const stores = [
@@ -311,15 +317,15 @@ function Units() {
     { city: "Campos de Holambra", address: ["Avenida das Posses, nº 330", "Campos de Holambra, Paranapanema / SP"] },
   ];
   return (
-    <section id="unidades" className="bg-neutral-950 text-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section id="unidades" className="bg-neutral-950 text-white py-14 sm:py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
-          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+          <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl leading-[1.05]">
             Próximo de você, com <span className="text-mf-red">8 unidades</span>
           </h2>
-          <p className="mt-5 text-white/70 text-lg">Suporte comercial e técnico antes, durante e depois da compra.</p>
+          <p className="mt-4 md:mt-5 text-white/70 text-base md:text-lg">Suporte comercial e técnico antes, durante e depois da compra.</p>
         </motion.div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
+        <div className="mt-10 md:mt-14 grid gap-y-7 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-8">
           {stores.map((s, i) => (
             <motion.div
               key={s.city}
@@ -327,7 +333,7 @@ function Units() {
               transition={{ duration: 0.5, delay: 0.04 * i }}
               className="group"
             >
-              <h3 className="font-display font-bold text-xl md:text-2xl text-mf-red leading-tight">
+              <h3 className="font-display font-bold text-lg md:text-2xl text-mf-red leading-tight">
                 A9 — {s.city}
               </h3>
               <div className="mt-2 text-sm md:text-base text-white/80 leading-relaxed">
@@ -338,10 +344,14 @@ function Units() {
             </motion.div>
           ))}
         </div>
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-10 md:mt-14 text-center">
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+        </motion.div>
       </div>
     </section>
   );
 }
+
 
 function Testimonials() {
   const items = [
@@ -349,32 +359,32 @@ function Testimonials() {
     { name: "Marcela Gama", role: "Técnica Agrícola em Avaré", text: "As condições de financiamento da A9 e o suporte da equipe comercial são os melhores da região." },
   ];
   return (
-    <section id="depoimentos" className="relative py-20 md:py-28 bg-stadium text-white overflow-hidden">
+    <section id="depoimentos" className="relative py-14 sm:py-20 md:py-28 bg-stadium text-white overflow-hidden">
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 70% 30%, oklch(0.82 0.17 88 / 0.5), transparent 50%)" }} />
-      <div className="relative max-w-6xl mx-auto px-4 md:px-8">
+      <div className="relative max-w-6xl mx-auto px-5 md:px-8">
         <motion.div {...fadeUp} className="text-center">
-          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+          <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl leading-[1.05]">
             Quem planta com a A9, <span className="text-campaign-gold">colhe resultados</span>
           </h2>
         </motion.div>
-        <div className="mt-14 grid md:grid-cols-2 gap-8">
+        <div className="mt-10 md:mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
           {items.map((t, i) => (
             <motion.figure
               key={t.name}
               {...fadeUp}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-2xl p-8 md:p-10 relative"
+              className="bg-black/40 backdrop-blur border border-campaign-gold/30 rounded-2xl p-6 sm:p-8 md:p-10 relative"
             >
-              <Quote className="w-10 h-10 text-campaign-gold opacity-70 mb-4" />
-              <blockquote className="text-lg md:text-xl leading-relaxed font-medium">"{t.text}"</blockquote>
-              <figcaption className="mt-6 pt-6 border-t border-white/10">
-                <div className="font-display font-bold text-lg uppercase text-campaign-gold">{t.name}</div>
-                <div className="text-sm text-white/70">{t.role}</div>
+              <Quote className="w-8 h-8 md:w-10 md:h-10 text-campaign-gold opacity-70 mb-3 md:mb-4" />
+              <blockquote className="text-base sm:text-lg md:text-xl leading-relaxed font-medium">"{t.text}"</blockquote>
+              <figcaption className="mt-5 md:mt-6 pt-5 md:pt-6 border-t border-white/10">
+                <div className="font-display font-bold text-base md:text-lg uppercase text-campaign-gold">{t.name}</div>
+                <div className="text-xs md:text-sm text-white/70">{t.role}</div>
               </figcaption>
             </motion.figure>
           ))}
         </div>
-        <motion.div {...fadeUp} className="mt-14 text-center">
+        <motion.div {...fadeUp} className="mt-10 md:mt-14 text-center">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
@@ -383,35 +393,37 @@ function Testimonials() {
 }
 
 function FinalCTA() {
+
   const bullets = [
     "Financiamento facilitado",
     "Tecnologia de agricultura de precisão",
     "A sua rede Massey Ferguson do interior de SP",
   ];
   return (
-    <section className="relative py-20 md:py-28 bg-neutral-950 text-white overflow-hidden">
+    <section className="relative py-14 sm:py-20 md:py-28 bg-neutral-950 text-white overflow-hidden">
       <img src={heroStadium} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25" />
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
-      <div className="relative max-w-5xl mx-auto px-4 md:px-8 text-center">
-        <motion.img {...fadeUp} src={logoCampanha} alt="Gol de Placa" className="mx-auto w-[200px] md:w-[300px] mb-8" />
-        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="font-display font-bold uppercase text-3xl md:text-5xl lg:text-6xl leading-tight">
+      <div className="relative max-w-5xl mx-auto px-5 md:px-8 text-center">
+        <motion.img {...fadeUp} src={logoCampanha} alt="Gol de Placa" className="mx-auto w-[170px] sm:w-[220px] md:w-[300px] mb-6 md:mb-8" />
+        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="font-display font-bold uppercase text-[clamp(1.7rem,7.5vw,3.2rem)] md:text-5xl lg:text-6xl leading-[1.05]">
           Potência, tecnologia e <span className="text-campaign-gold">gente que entende do agro</span>
         </motion.h2>
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-10 flex flex-col items-center gap-3">
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-8 md:mt-10 flex flex-col items-center gap-3">
           {bullets.map((b) => (
-            <div key={b} className="flex items-center gap-3 text-base md:text-lg">
+            <div key={b} className="flex items-center gap-3 text-sm sm:text-base md:text-lg">
               <CheckCircle2 className="w-5 h-5 text-campaign-gold shrink-0" />
               <span>{b}</span>
             </div>
           ))}
         </motion.div>
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12">
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-10 md:mt-12">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
   );
 }
+
 
 function Footer() {
   return (
@@ -458,51 +470,51 @@ function Landing() {
         <About />
         <Machines />
         {/* Conditions strip */}
-        <section className="relative bg-gold py-20 md:py-24 overflow-hidden">
+        <section className="relative bg-gold py-14 sm:py-20 md:py-24 overflow-hidden">
           <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 15% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%), radial-gradient(circle at 85% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%)" }} />
-          <div className="relative max-w-6xl mx-auto px-4 md:px-8">
-            <motion.div {...fadeUp} className="text-center mb-12">
-              <h2 className="mt-5 font-display font-bold uppercase text-3xl md:text-5xl text-campaign-green-dark leading-tight">
+          <div className="relative max-w-6xl mx-auto px-5 md:px-8">
+            <motion.div {...fadeUp} className="text-center mb-9 md:mb-12">
+              <h2 className="font-display font-bold uppercase text-[clamp(1.8rem,8vw,3.2rem)] md:text-5xl text-campaign-green-dark leading-[1.05]">
                 <span className="text-mf-red">GOL DE PLACA</span>
               </h2>
             </motion.div>
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid gap-5 md:grid-cols-2 md:gap-8">
               <motion.div
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: 0.05 }}
-                className="group relative bg-campaign-green-dark text-white rounded-2xl p-8 md:p-10 shadow-stadium hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
+                className="group relative bg-campaign-green-dark text-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-stadium hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
               >
                 <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-campaign-gold/20" />
-                <div className="relative flex items-start gap-5">
-                  <div className="w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0">
-                    <Sprout className="w-9 h-9 text-campaign-green-dark" />
+                <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-5 text-center sm:text-left">
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0 mx-auto sm:mx-0">
+                    <Sprout className="w-8 h-8 md:w-9 md:h-9 text-campaign-green-dark" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Financiamento</div>
-                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Taxas de Financiamento Reduzidas</h3>
-                    <p className="mt-3 text-base md:text-lg text-white/85 leading-relaxed">Condições exclusivas do Gol de Placa, com as melhores taxas da região.</p>
+                    <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-campaign-gold mb-1.5 md:mb-2">Financiamento</div>
+                    <h3 className="font-display font-bold uppercase text-2xl md:text-4xl leading-tight">Taxas de Financiamento Reduzidas</h3>
+                    <p className="mt-2 md:mt-3 text-sm md:text-lg text-white/85 leading-relaxed">Condições exclusivas do Gol de Placa, com as melhores taxas da região.</p>
                   </div>
                 </div>
               </motion.div>
               <motion.div
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="group relative bg-mf-red text-white rounded-2xl p-8 md:p-10 shadow-red hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
+                className="group relative bg-mf-red text-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-red hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
               >
                 <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-campaign-gold/25" />
-                <div className="relative flex items-start gap-5">
-                  <div className="w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0">
-                    <Percent className="w-9 h-9 text-campaign-green-dark" />
+                <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-5 text-center sm:text-left">
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0 mx-auto sm:mx-0">
+                    <Percent className="w-8 h-8 md:w-9 md:h-9 text-campaign-green-dark" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Desconto Imediato</div>
-                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Até 15% OFF</h3>
-                    <p className="mt-3 text-base md:text-lg text-white/90 leading-relaxed">Descontos reais em máquinas selecionadas para fechamento imediato.</p>
+                    <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-campaign-gold mb-1.5 md:mb-2">Desconto Imediato</div>
+                    <h3 className="font-display font-bold uppercase text-2xl md:text-4xl leading-tight">Até 15% OFF</h3>
+                    <p className="mt-2 md:mt-3 text-sm md:text-lg text-white/90 leading-relaxed">Descontos reais em máquinas selecionadas para fechamento imediato.</p>
                   </div>
                 </div>
               </motion.div>
             </div>
-            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12 text-center">
+            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-9 md:mt-12 text-center">
               <CTAButton large>Quero essas condições</CTAButton>
             </motion.div>
           </div>
