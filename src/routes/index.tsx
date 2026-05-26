@@ -400,29 +400,30 @@ function FinalCTA() {
     "A sua rede Massey Ferguson do interior de SP",
   ];
   return (
-    <section className="relative py-20 md:py-28 bg-neutral-950 text-white overflow-hidden">
+    <section className="relative py-14 sm:py-20 md:py-28 bg-neutral-950 text-white overflow-hidden">
       <img src={heroStadium} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25" />
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
-      <div className="relative max-w-5xl mx-auto px-4 md:px-8 text-center">
-        <motion.img {...fadeUp} src={logoCampanha} alt="Gol de Placa" className="mx-auto w-[200px] md:w-[300px] mb-8" />
-        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="font-display font-bold uppercase text-3xl md:text-5xl lg:text-6xl leading-tight">
+      <div className="relative max-w-5xl mx-auto px-5 md:px-8 text-center">
+        <motion.img {...fadeUp} src={logoCampanha} alt="Gol de Placa" className="mx-auto w-[170px] sm:w-[220px] md:w-[300px] mb-6 md:mb-8" />
+        <motion.h2 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="font-display font-bold uppercase text-[clamp(1.7rem,7.5vw,3.2rem)] md:text-5xl lg:text-6xl leading-[1.05]">
           Potência, tecnologia e <span className="text-campaign-gold">gente que entende do agro</span>
         </motion.h2>
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-10 flex flex-col items-center gap-3">
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mt-8 md:mt-10 flex flex-col items-center gap-3">
           {bullets.map((b) => (
-            <div key={b} className="flex items-center gap-3 text-base md:text-lg">
+            <div key={b} className="flex items-center gap-3 text-sm sm:text-base md:text-lg">
               <CheckCircle2 className="w-5 h-5 text-campaign-gold shrink-0" />
               <span>{b}</span>
             </div>
           ))}
         </motion.div>
-        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12">
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-10 md:mt-12">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
       </div>
     </section>
   );
 }
+
 
 function Footer() {
   return (
