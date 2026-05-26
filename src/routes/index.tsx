@@ -89,17 +89,42 @@ function Hero() {
         Sucesso de vendas na Agrishow e a oferta continua: 15% OFF e 15x sem juros na A9 Massey Ferguson.
       </h1>
 
-      {/* MOBILE: composição exata do PSD */}
+      {/* MOBILE: imagem hero do PSD + textos em HTML para escalarem bem */}
       <div className="md:hidden relative bg-black">
         <img
           src={heroMobilePsd}
-          alt="Campanha Gol de Placa A9 Massey Ferguson — Sucesso de vendas na Agrishow e a oferta continua, 15% OFF e 15x sem juros."
+          alt="Campanha Gol de Placa A9 Massey Ferguson"
           className="block w-full h-auto select-none"
           width={768}
-          height={1180}
+          height={855}
         />
-        <div className="-mt-4 px-6 pb-6 flex justify-center">
-          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+        <div className="px-5 pt-2 pb-7 text-center">
+          <p className="font-display font-extrabold uppercase text-campaign-gold tracking-[0.08em] text-[clamp(1.15rem,5.2vw,1.6rem)] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+            Sucesso de vendas na Agrishow
+          </p>
+          <h2 className="mt-2 font-display font-black uppercase text-white leading-[1.02] text-[clamp(2.1rem,9.5vw,3rem)]">
+            E a oferta continua
+          </h2>
+
+          <div
+            className="my-4 mx-auto h-px w-4/5 bg-gradient-to-r from-transparent via-[#00ff66] to-transparent shadow-[0_0_12px_#00ff66]"
+            aria-hidden="true"
+          />
+
+          <p className="font-display font-black uppercase leading-[1.05] text-[clamp(1.85rem,8.6vw,2.6rem)]">
+            <span className="text-white">15%</span>{" "}
+            <span className="text-campaign-gold">OFF</span>{" "}
+            <span className="text-white">e 15X</span>{" "}
+            <span className="text-campaign-gold">SEM JUROS</span>
+          </p>
+
+          <p className="mt-5 mx-auto max-w-[340px] text-white/85 leading-[1.45] text-[clamp(1rem,4.4vw,1.15rem)]">
+            Garanta seu Massey Ferguson com o especialista A9. Produtividade máxima, tecnologia e as condições que você só encontra na A9.
+          </p>
+
+          <div className="mt-6 flex justify-center">
+            <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+          </div>
         </div>
       </div>
 
