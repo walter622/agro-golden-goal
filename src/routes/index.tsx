@@ -470,51 +470,51 @@ function Landing() {
         <About />
         <Machines />
         {/* Conditions strip */}
-        <section className="relative bg-gold py-20 md:py-24 overflow-hidden">
+        <section className="relative bg-gold py-14 sm:py-20 md:py-24 overflow-hidden">
           <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 15% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%), radial-gradient(circle at 85% 50%, oklch(0.42 0.13 145 / 0.4), transparent 45%)" }} />
-          <div className="relative max-w-6xl mx-auto px-4 md:px-8">
-            <motion.div {...fadeUp} className="text-center mb-12">
-              <h2 className="mt-5 font-display font-bold uppercase text-3xl md:text-5xl text-campaign-green-dark leading-tight">
+          <div className="relative max-w-6xl mx-auto px-5 md:px-8">
+            <motion.div {...fadeUp} className="text-center mb-9 md:mb-12">
+              <h2 className="font-display font-bold uppercase text-[clamp(1.8rem,8vw,3.2rem)] md:text-5xl text-campaign-green-dark leading-[1.05]">
                 <span className="text-mf-red">GOL DE PLACA</span>
               </h2>
             </motion.div>
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid gap-5 md:grid-cols-2 md:gap-8">
               <motion.div
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: 0.05 }}
-                className="group relative bg-campaign-green-dark text-white rounded-2xl p-8 md:p-10 shadow-stadium hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
+                className="group relative bg-campaign-green-dark text-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-stadium hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
               >
                 <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-campaign-gold/20" />
-                <div className="relative flex items-start gap-5">
-                  <div className="w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0">
-                    <Sprout className="w-9 h-9 text-campaign-green-dark" />
+                <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-5 text-center sm:text-left">
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0 mx-auto sm:mx-0">
+                    <Sprout className="w-8 h-8 md:w-9 md:h-9 text-campaign-green-dark" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Financiamento</div>
-                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Taxas de Financiamento Reduzidas</h3>
-                    <p className="mt-3 text-base md:text-lg text-white/85 leading-relaxed">Condições exclusivas do Gol de Placa, com as melhores taxas da região.</p>
+                    <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-campaign-gold mb-1.5 md:mb-2">Financiamento</div>
+                    <h3 className="font-display font-bold uppercase text-2xl md:text-4xl leading-tight">Taxas de Financiamento Reduzidas</h3>
+                    <p className="mt-2 md:mt-3 text-sm md:text-lg text-white/85 leading-relaxed">Condições exclusivas do Gol de Placa, com as melhores taxas da região.</p>
                   </div>
                 </div>
               </motion.div>
               <motion.div
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="group relative bg-mf-red text-white rounded-2xl p-8 md:p-10 shadow-red hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
+                className="group relative bg-mf-red text-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-red hover:-translate-y-1 transition-all border-4 border-campaign-gold overflow-hidden"
               >
                 <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-campaign-gold/25" />
-                <div className="relative flex items-start gap-5">
-                  <div className="w-16 h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0">
-                    <Percent className="w-9 h-9 text-campaign-green-dark" />
+                <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-5 text-center sm:text-left">
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gold flex items-center justify-center shadow-gold shrink-0 mx-auto sm:mx-0">
+                    <Percent className="w-8 h-8 md:w-9 md:h-9 text-campaign-green-dark" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-widest text-campaign-gold mb-2">Desconto Imediato</div>
-                    <h3 className="font-display font-bold uppercase text-3xl md:text-4xl leading-tight">Até 15% OFF</h3>
-                    <p className="mt-3 text-base md:text-lg text-white/90 leading-relaxed">Descontos reais em máquinas selecionadas para fechamento imediato.</p>
+                    <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-campaign-gold mb-1.5 md:mb-2">Desconto Imediato</div>
+                    <h3 className="font-display font-bold uppercase text-2xl md:text-4xl leading-tight">Até 15% OFF</h3>
+                    <p className="mt-2 md:mt-3 text-sm md:text-lg text-white/90 leading-relaxed">Descontos reais em máquinas selecionadas para fechamento imediato.</p>
                   </div>
                 </div>
               </motion.div>
             </div>
-            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-12 text-center">
+            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-9 md:mt-12 text-center">
               <CTAButton large>Quero essas condições</CTAButton>
             </motion.div>
           </div>
