@@ -317,15 +317,15 @@ function Units() {
     { city: "Campos de Holambra", address: ["Avenida das Posses, nº 330", "Campos de Holambra, Paranapanema / SP"] },
   ];
   return (
-    <section id="unidades" className="bg-neutral-950 text-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section id="unidades" className="bg-neutral-950 text-white py-14 sm:py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
-          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+          <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl leading-[1.05]">
             Próximo de você, com <span className="text-mf-red">8 unidades</span>
           </h2>
-          <p className="mt-5 text-white/70 text-lg">Suporte comercial e técnico antes, durante e depois da compra.</p>
+          <p className="mt-4 md:mt-5 text-white/70 text-base md:text-lg">Suporte comercial e técnico antes, durante e depois da compra.</p>
         </motion.div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
+        <div className="mt-10 md:mt-14 grid gap-y-7 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-8">
           {stores.map((s, i) => (
             <motion.div
               key={s.city}
@@ -333,7 +333,7 @@ function Units() {
               transition={{ duration: 0.5, delay: 0.04 * i }}
               className="group"
             >
-              <h3 className="font-display font-bold text-xl md:text-2xl text-mf-red leading-tight">
+              <h3 className="font-display font-bold text-lg md:text-2xl text-mf-red leading-tight">
                 A9 — {s.city}
               </h3>
               <div className="mt-2 text-sm md:text-base text-white/80 leading-relaxed">
@@ -344,10 +344,14 @@ function Units() {
             </motion.div>
           ))}
         </div>
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-10 md:mt-14 text-center">
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+        </motion.div>
       </div>
     </section>
   );
 }
+
 
 function Testimonials() {
   const items = [
