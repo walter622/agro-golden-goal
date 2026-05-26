@@ -98,7 +98,7 @@ function Hero() {
           width={768}
           height={1288}
         />
-        <div className="px-6 py-6 flex justify-center">
+        <div className="-mt-4 px-6 pb-6 flex justify-center">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
         </div>
       </div>
