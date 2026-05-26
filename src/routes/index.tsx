@@ -10,6 +10,7 @@ import logoMasseyBranco from "@/assets/massey-a9-branco.png";
 import heroStadium from "@/assets/hero-stadium.jpg";
 import heroStadiumMachines from "@/assets/hero-stadium-machines.jpg";
 import heroPsd from "@/assets/hero-psd.jpg";
+import heroMobilePsd from "@/assets/hero-mobile-psd.jpg";
 import aboutImg from "@/assets/about-a9.jpg";
 import imgTractor from "@/assets/machine-tractor.jpg";
 import imgHarvester from "@/assets/machine-harvester.jpg";
