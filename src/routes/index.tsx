@@ -96,7 +96,7 @@ function Hero() {
           alt="Campanha Gol de Placa A9 Massey Ferguson — Sucesso de vendas na Agrishow e a oferta continua, 15% OFF e 15x sem juros."
           className="block w-full h-auto select-none"
           width={768}
-          height={1288}
+          height={1180}
         />
         <div className="-mt-4 px-6 pb-6 flex justify-center">
           <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
