@@ -263,15 +263,15 @@ function Machines() {
     { img: imgSprayer, name: "Pulverizadores", model: "Massey Ferguson", text: "Precisão milimétrica na aplicação." },
   ];
   return (
-    <section id="maquinas" className="bg-neutral-950 text-white py-20 md:py-28 relative overflow-hidden">
+    <section id="maquinas" className="bg-neutral-950 text-white py-14 sm:py-20 md:py-28 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(ellipse at top, oklch(0.82 0.17 88 / 0.25), transparent 60%)" }} />
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8">
         <motion.div {...fadeUp} className="text-center max-w-3xl mx-auto">
-          <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl">
+          <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl leading-[1.05]">
             Tecnologia Massey Ferguson para <span className="text-campaign-gold">cada desafio</span>
           </h2>
         </motion.div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 md:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
           {list.map((m, i) => (
             <motion.article
               key={m.name}
@@ -279,15 +279,15 @@ function Machines() {
               transition={{ duration: 0.6, delay: 0.08 * i }}
               className="group relative rounded-2xl overflow-hidden bg-gradient-to-b from-neutral-900 to-black border border-white/10 hover:border-campaign-gold transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(199,17,33,0.4)]"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden">
                 <img src={m.img} alt={m.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1200ms]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute top-3 right-3 bg-mf-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-red">Massey</div>
                 <div className="absolute bottom-3 left-4 text-xs font-bold uppercase tracking-widest text-campaign-gold">{m.model}</div>
               </div>
-              <div className="p-6 relative">
+              <div className="p-5 md:p-6 relative">
                 <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-campaign-gold/40 to-transparent" />
-                <h3 className="font-display font-bold text-xl uppercase leading-tight group-hover:text-campaign-gold transition-colors">{m.name}</h3>
+                <h3 className="font-display font-bold text-lg md:text-xl uppercase leading-tight group-hover:text-campaign-gold transition-colors">{m.name}</h3>
                 <p className="mt-2 text-sm text-white/70 leading-relaxed">{m.text}</p>
                 <div className="mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-mf-red opacity-0 group-hover:opacity-100 transition-opacity">
                   Saber mais <ArrowRight className="w-3.5 h-3.5" />
@@ -296,10 +296,14 @@ function Machines() {
             </motion.article>
           ))}
         </div>
+        <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mt-10 md:mt-14 text-center">
+          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+        </motion.div>
       </div>
     </section>
   );
 }
+
 
 function Units() {
   const stores = [
