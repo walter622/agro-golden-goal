@@ -208,43 +208,43 @@ function About() {
     { icon: Wrench, title: "Entrega Técnica", text: "Você não recebe apenas uma máquina — recebe treinamento completo para extrair 100% dela." },
   ];
   return (
-    <section id="sobre" className="bg-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div {...fadeUp}>
-            <h2 className="mt-4 font-display font-bold uppercase text-3xl md:text-5xl text-foreground leading-tight">
+    <section id="sobre" className="bg-white py-14 sm:py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative order-1 lg:order-2">
+            <div className="absolute -inset-3 md:-inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
+            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[4/3] md:aspect-[3/4] object-cover" />
+          </motion.div>
+          <motion.div {...fadeUp} className="order-2 lg:order-1 text-center lg:text-left">
+            <h2 className="font-display font-bold uppercase text-[clamp(1.6rem,7vw,3rem)] md:text-5xl text-foreground leading-[1.05]">
               A9 Máquinas: <span className="text-mf-red">tradição</span> e inovação no campo
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-5 md:mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
               A A9 é a sua concessionária Massey Ferguson de confiança no interior de São Paulo. Mais do que vender máquinas, entregamos soluções que aumentam a eficiência do produtor rural — do pequeno ao grande.
             </p>
-            <div className="mt-8">
+            <div className="mt-7 md:mt-8 flex justify-center lg:justify-start">
               <CTAButton>Fale com um Especialista A9 Agora</CTAButton>
             </div>
           </motion.div>
-          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.15 }} className="relative">
-            <div className="absolute -inset-4 bg-mf-red/10 rounded-2xl -rotate-2" />
-            <img src={aboutImg} alt="Especialista A9 cumprimentando produtor rural ao lado de trator Massey Ferguson" loading="lazy" className="relative rounded-2xl shadow-stadium w-full aspect-[3/4] object-cover" />
-          </motion.div>
         </div>
 
-        <div className="mt-20 md:mt-28">
-          <motion.h3 {...fadeUp} className="text-center font-display font-bold uppercase text-2xl md:text-4xl">
+        <div className="mt-16 md:mt-28">
+          <motion.h3 {...fadeUp} className="text-center font-display font-bold uppercase text-[clamp(1.4rem,6vw,2.4rem)] md:text-4xl leading-tight">
             Por que investir com a <span className="text-mf-red">A9</span>?
           </motion.h3>
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
+          <div className="mt-10 md:mt-12 grid gap-5 md:grid-cols-3 md:gap-6">
             {reasons.map((r, i) => (
               <motion.div
                 key={r.title}
                 {...fadeUp}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                className="group p-8 rounded-xl border-2 border-border hover:border-mf-red bg-white hover:shadow-red transition-all"
+                className="group p-6 md:p-8 rounded-xl border-2 border-border hover:border-mf-red bg-white hover:shadow-red transition-all"
               >
-                <div className="w-14 h-14 rounded-lg bg-mf-red/10 group-hover:bg-mf-red flex items-center justify-center transition-colors mb-5">
-                  <r.icon className="w-7 h-7 text-mf-red group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-mf-red/10 group-hover:bg-mf-red flex items-center justify-center transition-colors mb-4 md:mb-5">
+                  <r.icon className="w-6 h-6 md:w-7 md:h-7 text-mf-red group-hover:text-white transition-colors" />
                 </div>
-                <h4 className="font-display font-bold text-xl uppercase">{r.title}</h4>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{r.text}</p>
+                <h4 className="font-display font-bold text-lg md:text-xl uppercase">{r.title}</h4>
+                <p className="mt-2 md:mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{r.text}</p>
               </motion.div>
             ))}
           </div>
@@ -253,6 +253,7 @@ function About() {
     </section>
   );
 }
+
 
 function Machines() {
   const list = [
