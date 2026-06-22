@@ -45,7 +45,7 @@ const fadeUp = {
 function CTAButton({ children, large = false, variant = "red" }: { children: React.ReactNode; large?: boolean; variant?: "red" | "gold" }) {
   const base = variant === "gold"
     ? "bg-gold text-campaign-green-dark shadow-gold hover:shadow-[0_20px_50px_-10px_oklch(0.82_0.17_88/0.7)]"
-    : "bg-red-cta text-white shadow-red hover:shadow-[0_20px_50px_-10px_oklch(0.51_0.21_27/0.8)]";
+    : "bg-gradient-to-b from-[#017907] to-[#015d05] text-white shadow-[0_10px_30px_-10px_rgba(1,121,7,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(1,121,7,0.8)]";
   return (
     <a
       href={WA_URL}
@@ -73,7 +73,7 @@ function Header() {
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 sm:gap-2 bg-mf-red hover:bg-mf-red-dark text-white px-3 py-2 sm:px-4 rounded-md text-xs sm:text-sm font-bold uppercase tracking-wide transition shadow-red"
+          className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#017907] hover:bg-[#015d05] text-white px-3 py-2 sm:px-4 rounded-md text-xs sm:text-sm font-bold uppercase tracking-wide transition shadow-[0_10px_30px_-10px_rgba(1,121,7,0.5)]"
         >
           <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Falar agora
         </a>
