@@ -42,9 +42,11 @@ const fadeUp = {
   transition: { duration: 0.6, ease: "easeOut" as const },
 };
 
-function CTAButton({ children, large = false, variant = "red" }: { children: React.ReactNode; large?: boolean; variant?: "red" | "gold" }) {
+function CTAButton({ children, large = false, variant = "green" }: { children: React.ReactNode; large?: boolean; variant?: "green" | "gold" | "red" }) {
   const base = variant === "gold"
     ? "bg-gold text-campaign-green-dark shadow-gold hover:shadow-[0_20px_50px_-10px_oklch(0.82_0.17_88/0.7)]"
+    : variant === "red"
+    ? "bg-mf-red text-white shadow-red hover:shadow-[0_20px_50px_-10px_rgba(220,38,38,0.7)]"
     : "bg-gradient-to-b from-[#017907] to-[#015d05] text-white shadow-[0_10px_30px_-10px_rgba(1,121,7,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(1,121,7,0.8)]";
   return (
     <a
