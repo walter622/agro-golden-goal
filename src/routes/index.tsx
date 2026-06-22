@@ -162,7 +162,7 @@ function OfferBlock() {
           ))}
         </div>
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="mt-10 md:mt-14">
-          <CTAButton large>Fale com um Especialista A9 Agora</CTAButton>
+          <CTAButton large variant="red">Fale com um Especialista A9 Agora</CTAButton>
         </motion.div>
 
       </div>
